@@ -1,5 +1,5 @@
 .pixel-perfect {
-	top: -3793px;
+	top: -2841px;
 	display: block;
 	@include a-cent(x);
 	pointer-events: none;
@@ -525,5 +525,13 @@ iframe {
 	z-index: -1;
 	img {
 		position: absolute;
+	}
+}
+.fancybox {
+	&__backdrop {
+		backdrop-filter: blur(3px);
+	}
+	&__caption {
+		color: $body-color;
 	}
 }

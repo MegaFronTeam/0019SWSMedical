@@ -5,9 +5,7 @@
 	@include media-breakpoint-up(lg) {
 		--sTPB: #{rem(40)};
 	}
-	& > .container {
-		position: relative;
-	}
+	position: relative;
 	.floating-imgs {
 		img {
 			&:first-child {

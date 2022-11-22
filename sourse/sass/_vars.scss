@@ -521,8 +521,8 @@ $border-color-translucent:    rgba($black, .175) !default;
 // scss-docs-end border-variables
 
 // scss-docs-start border-radius-variables
-$border-radius:               17px !default;
-$border-radius-sm:            12px !default;
+$border-radius:               rem(17) !default;
+$border-radius-sm:            rem(12) !default;
 $border-radius-lg:            .5rem !default;
 $border-radius-xl:            1rem !default;
 $border-radius-2xl:           2rem !default;

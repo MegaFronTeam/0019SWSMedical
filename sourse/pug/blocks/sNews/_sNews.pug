@@ -1,0 +1,27 @@
+mixin sNews(data)
+	// start sNews
+	+b.SECTION.sNews.section#sNews&attributes(attributes)
+		.container
+			+b.section-title
+				h2 Новости
+			+e.wrapper
+				+e.item
+					+e.row.row
+						+e.col.col-md-7.col-lg-auto.order-md-last
+							+e.img-wrapper 
+								+e.img-wrap(data-fancybox='sNews' data-caption='немного текста или подробнее <br> немного текста или подробнее' data-src=`img/sNews-lg-1.jpg`)
+									+img(`img/sNews-1.jpg`, 'bg')
+						.col-md-5.col-lg
+							h6 Выставка этих аппаратов в&nbsp;крокусе
+							p немного текста или подробнее <br> немного текста или подробнее
+				+e.item
+					+e.row.row
+						+e.col.col-md-7.col-lg-auto
+							+e.img-wrapper 
+								+e.img-wrap(data-fancybox='sNews' data-caption='Lorem ipsum dolor sit amet consectetur adipisicing elit.' data-src=`img/sNews-lg-1.jpg`)
+									+img(`img/sNews-1.jpg`, 'bg')
+						.col-md-5.col-lg
+							h6 Lorem ipsum dolor sit amet consectetur.
+							p Lorem ipsum dolor sit amet consectetur adipisicing elit.
+
+	// end sNews
