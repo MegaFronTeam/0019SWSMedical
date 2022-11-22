@@ -2,7 +2,20 @@
 .sForm {
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
-	// --sTPB: #{rem()};
+	@include media-breakpoint-up(lg) {
+		--sTPB: #{rem(40)};
+	}
+	.floating-imgs {
+		img {
+			&:first-child {
+				top: rem(-37);
+				right: 0;
+				@include media-breakpoint-up(xxl) {
+					right: rem(30);
+				}
+			}
+		}
+	}
 	&__row {
 		// --bs-gutter-x: #{rem()};
 		--bs-gutter-y: var(--bs-gutter-x);

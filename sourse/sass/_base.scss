@@ -1,5 +1,5 @@
 .pixel-perfect {
-	top: 0;
+	top: -3793px;
 	display: block;
 	@include a-cent(x);
 	pointer-events: none;
@@ -513,4 +513,12 @@ iframe {
 .container-xl,
 .container-xxl {
 	--bs-gutter-x: #{rem(40)};
+}
+
+.floating-imgs {
+	position: relative;
+	img {
+		position: absolute;
+		pointer-events: none;
+	}
 }
