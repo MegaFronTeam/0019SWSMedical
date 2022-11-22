@@ -2,8 +2,41 @@ mixin sContact()
 	// start sContact
 	+b.SECTION.sContact.section#sContact&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sContact
-				
-			+e.row.row
+			.floating-imgs
+				+img('img/svg/sContact-bg-1.svg')
+				+img('img/svg/sContact-bg-2.svg')
+			+b.section-title
+				h2 Контакты
+			+e.wrapper
+				+e.row.row
+					mixin item(a, h, i, ...items)
+						.col-md-6.col-xl-auto
+							+e.item
+								a(href=`${a}`)
+									h6!= h
+									+e.img-wrap
+										.img-wrap-center
+											+img(`img/${i}`)
+								block
+					+item(`https://www.medicalm.ru/`, `Компания поставщик ООО &laquo;МЕДИКЭЛ&nbsp;М&raquo;`, 'sContact-1.png')
+						ul
+							li Адрес: 141031, Московская область, пос. Вешки, Липкинское шоссе, 2-й км, вл7с1. БЦ&nbsp;&laquo;Вешки Парк&raquo;
+							li Сайт: 
+								a(href="https://www.medicalm.ru/") www.medicalm.ru
+							li Эл. почта: 
+								a(href= "mailto:medicalm@inbox.ru") medicalm@inbox.ru
+							li Тел.: 
+								a(href= "tel:+74952592406") +7&nbsp;(495)&nbsp;259&nbsp;24&nbsp;06
+
+					+item(`https://www.swskj.com/`, `Компания производитель &laquo;SWS Medical&raquo;`, 'svg/sContact-2.svg')
+						ul
+							li Адрес: Китай, Чунцин, новый район Лянцзян, Цыцзи-Роуд, 1
+							li Сайт: 
+								a(href="https://www.swskj.com/") www.swskj.com
+							li Эл. почта: 
+								a(href= "mailto:nicolelee@swskj.com") nicolelee@swskj.com
+							li Тел.: 
+								a(href= "tel:+8668884702") +86-68884702
+					
+
 	// end sContact
