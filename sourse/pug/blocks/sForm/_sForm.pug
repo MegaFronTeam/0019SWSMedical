@@ -2,12 +2,20 @@ mixin sForm()
 	// start sForm
 	+b.SECTION.sForm.section#sForm&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sForm
-				
-			+e.row.row
+			+b.section-title
+				h2 Остались вопросы?
 			+form-wrap
-				+input("",'')
-				+input("",'')
-				+input("",'')
+				+e.row.row
+					.col-lg-8
+						.row
+							.col-sm
+								+input('Ваше имя', 'text')
+									+e.input-border
+							.col-sm
+								+input('Ваш номер телефона', 'tel')
+									+e.input-border
+					.col-md-6.col-lg-4.order-md-last
+						+in-c("checkbox", 'Я согласен-(а) на обработку персональных данных')(required)
+					.col-md-6.col-lg-4
+						+btn('Перезвоните мне', 'submit').btn.btn-outline-primary
 	// end sForm

@@ -5,6 +5,31 @@ mixin headerBlock()
 			+b.section-title.text-center
 				h2 headerBlock ds dfsdfdsfsd
 
-			.row
-						
+			h1 Lorem ipsum dolor sit amet.
+			h2 Lorem ipsum dolor sit amet.
+			h3 Lorem ipsum dolor sit amet.
+			h4 Lorem ipsum dolor sit amet.
+			h5 Lorem ipsum dolor sit amet.
+			h6 Lorem ipsum dolor sit amet.
+			p Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure fuga necessitatibus ut omnis officia? Inventore nulla numquam excepturi iusto nihil natus accusamus, recusandae aspernatur ex corrupti. Aliquid natus quis magnam voluptates ducimus debitis vel consequatur. Soluta cum facilis eum laborum?
+			ul
+				li Lorem ipsum dolor sit amet consectetur.
+				li Lorem ipsum dolor sit amet consectetur.
+				li Lorem ipsum dolor sit amet consectetur.
+				li Lorem ipsum dolor sit amet consectetur.
+				li Lorem ipsum dolor sit amet consectetur.
+			+form-wrap
+				.row
+					.col-auto
+						+btn('Связаться с нами').btn.btn-primary
+					.col-auto
+						+btn('Связаться с нами').btn.btn-outline-primary
+					.col-auto
+						+input('Ваше имя', 'text')
+							+e.input-border
+					.col-auto
+						+input('Ваш номер телефона', 'tel')
+							+e.input-border
+					.col-auto
+						+in-c("checkbox", 'Lorem ipsum dolor sit amet.')
 	// end headerBlock

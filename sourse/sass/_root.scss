@@ -5,14 +5,14 @@
 
 	@include media-breakpoint-up(md) {
 
-		--sPT: #{rem(80)};
-		--sPB: #{rem(90)};
-		--sTPB: #{rem(40)};
+		--sPT: #{rem(50)};
+		--sPB: #{rem(50)};
+		--sTPB: #{rem(50)};
 	}
 
-	--sPT: #{rem(80 * .5)};
-	--sPB: #{rem(90 * .5)};
-	--sTPB: #{rem(40 * .5)};
+	--sPT: #{rem(50 * .6)};
+	--sPB: #{rem(50 * .6)};
+	--sTPB: #{rem(50 * .6)};
 
 
 	--fancybox-content-color: var(--bs-body-color);

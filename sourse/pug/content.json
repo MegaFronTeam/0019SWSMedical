@@ -1,34 +1,44 @@
 {
-	"nav":[
-		{ "name":"Наши работы", "url":"#"},
-		{	"name":"Цены", "url":"#"},
-		{"name":"Калькулятор", "url":"#"},
-		{"name":"Акции", "url":"#"} ,
+	"nav": [
 		{
-			"name":"Заказать", 
-			"url":"#"
-			}
+			"name": "О нас",
+			"url": "#"
+		},
+		{
+			"name": "Аппараты",
+			"url": "#"
+		},
+		{
+			"name": "Новости",
+			"url": "#"
+		},
+		{
+			"name": "Контакты",
+			"url": "#"
+		}
 	],
-	"social":[
-		"fb","instagram","telegram"
+	"social": [
+		"fb",
+		"instagram",
+		"telegram"
 	],
-	"index":{
+	"index": {
 		"head": {
-			"title": "тест dffsdf dfsdтест 2222"
+			"title": "SWS Medical"
 		}
 	},
 	"items": [
-			{
+		{
 			"title": "заловок",
 			"text": "текст"
 		},
-			{
+		{
 			"title": "заловок 22",
 			"text": "текст"
 		},
-			{
+		{
 			"title": "заловок 33",
 			"text": "текст"
-			}
-		]
-	}
+		}
+	]
+}
