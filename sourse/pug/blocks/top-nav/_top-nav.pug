@@ -1,5 +1,5 @@
 mixin menu-toggle()
-	+b.toggle-menu-mobile--js.d-lg-none
+	+b.toggle-menu-mobile--js.d-xl-none
 		span
 mixin mob-mnu()
 	-
@@ -21,13 +21,23 @@ mixin top-nav()
 	// start top-nav
 	+b.top-nav.block-with-lazy
 		.container
-			.row
-				.col.order-lg-0.order-last
+			+e.row.row
+				.col-auto
+					+e.logo(href="/")
+						+img('img/svg/logo.svg')
+				.col
 					.menu-mobile.menu-mobile--js
 						.menu-mobile__inner
 							+menu-toggle()
 							+mnu()
+							+b.nav-contact.d-xl-none
+								+e.tel(href="tel:+74952592406") +7 (495) 259-24-06
+								+e.schedule пн-пт: с&nbsp;09:00 до&nbsp;18:00
+				.col-auto.d-none.d-xl-block
+					+b.nav-contact
+						+e.tel(href="tel:+74952592406") +7 (495) 259-24-06
+						+e.schedule пн-пт: с&nbsp;09:00 до&nbsp;18:00
 					
-				.col-auto.d-lg-none
+				.col-auto.d-xl-none
 					+menu-toggle()
 	// end top-nav
