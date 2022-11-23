@@ -92,7 +92,7 @@ body {
 		overscroll-behavior: none;
 
 		&::before {
-			z-index: 999;
+			z-index: 998;
 			opacity: 1;
 		}
 	}

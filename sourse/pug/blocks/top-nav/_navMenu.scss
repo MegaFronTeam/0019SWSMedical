@@ -51,10 +51,12 @@
 		content: "";
 		position: absolute;
 		left: 0;
+		border-radius: em(2);
 	}
 	span {
 		@include a-cent(y);
 		display: block;
+		border-radius: em(2);
 	}
 
 	span:before {
@@ -76,6 +78,12 @@
 		transition: all 0.3s;
 		backface-visibility: hidden;
 		transform-origin: 50% 50%;
+	}
+}
+.menu-mobile {
+	@media (max-width: 500px) {
+		max-width: 100%;
+		width: 100%;
 	}
 }
 @include media-breakpoint-down(xl) {
@@ -101,21 +109,21 @@
 		will-change: transform;
 
 		.toggle-menu-mobile {
-			margin-left: -15%;
+			// margin-left: -15%;
 			position: absolute;
-			left: 0;
-			right: auto;
+			right: rem(15);
+			left: auto;
 			color: #fff;
-			top: 10px;
+			top: 5px;
 			z-index: 9999;
 			span:after,
 			span:before {
-				--color: #003874;
+				--color: #{$primary};
 				// --color: #ffffff;
 			}
 		}
 		&__inner {
-			padding: calc(env(safe-area-inset-top, 0px) + #{rem(20)}) 0 calc(env(safe-area-inset-bottom, 0px) + #{rem(20)});
+			padding: calc(env(safe-area-inset-top, 0px) + #{rem(60)}) 0 calc(env(safe-area-inset-bottom, 0px) + #{rem(20)});
 			overflow-x: hidden;
 			overflow-y: auto;
 			-webkit-overflow-scrolling: touch;
