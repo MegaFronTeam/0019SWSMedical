@@ -1,7 +1,7 @@
 // start .sContact
 .sContact {
 	// --sPT: #{rem()};
-	// --sPB: #{rem()};
+	--sPB: 0;
 	// --sTPB: #{rem()};
 
 	position: relative;
@@ -99,6 +99,7 @@
 		position: relative;
 		height: rem(320);
 		margin-top: var(--sTPB);
+		border: 1px solid #D4EAFF;
 		// width: 100vw;
 		// margin-left: calc(-1 * (100vw - 100%) / 2);
 		&:after {

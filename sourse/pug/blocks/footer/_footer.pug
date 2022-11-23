@@ -1,9 +1,30 @@
 mixin footer()
 	+b.FOOTER.footer.section
 		.container
-			.row
-				.col
-					
-				.col Footer
-				.col
+			+e.row.row
 				.col-auto
+					+e.logo(href="/")
+						+img('img/svg/logo.svg')
+				.col-12.col-sm-12.col-lg
+					+mnu()
+				.col-auto.col-sm
+					+e.btn-wrap
+						+e.btn.btn
+							+img('img/medicalm.png')
+							span Перейти на&nbsp;сайт дистрибьютера
+				.col-12.col-sm-auto
+					+b.nav-contact
+						+e.tel(href="tel:+74952592406") +7 (495) 259-24-06
+						+e.schedule пн-пт: с&nbsp;09:00 до&nbsp;18:00
+			+e.wrapper
+				.row
+					.col-auto
+						+e.item(href="#") Юридическая информация
+					.col-auto
+						+e.item(href="#") Политика конфиденциальности
+					.col-auto
+						+e.item © Все права защищены. #[span.currentYear]
+					.col-auto
+						+e.item--developer Сделано в
+							a(href="#" target="_blank")
+								+img('img/unity.png')

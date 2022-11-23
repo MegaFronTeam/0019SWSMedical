@@ -58,6 +58,35 @@
 			height: auto;
 		}
 	}
+	.nav-contact {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		@include media-breakpoint-down(xl) {
+			align-items: stretch;
+			& > * {
+				padding: rem(15);
+				font-size: rem(18);
+			}
+		}
+		&__tel {
+			&:not(:hover) {
+				color: #63a9ff;
+			}
+			@include media-breakpoint-up(xl) {
+				font-size: rem(14);
+				line-height: calc(16 / 14);
+				padding-bottom: rem(5);
+			}
+		}
+		&__schedule {
+			color: #63a9ff;
+			@include media-breakpoint-up(xl) {
+				font-size: rem(12);
+				line-height: calc(15 / 12);
+			}
+		}
+	}
 
 	@include media-breakpoint-up(md) {
 	}
@@ -105,32 +134,4 @@
 	}
 }
 
-.nav-contact {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	@include media-breakpoint-down(xl) {
-		align-items: stretch;
-		& > * {
-			padding: rem(15);
-			font-size: rem(18);
-		}
-	}
-	&__tel {
-		&:not(:hover) {
-			color: #63a9ff;
-		}
-		@include media-breakpoint-up(xl) {
-			font-size: rem(14);
-			line-height: calc(16 / 14);
-			padding-bottom: rem(5);
-		}
-	}
-	&__schedule {
-		color: #63a9ff;
-		@include media-breakpoint-up(xl) {
-			font-size: rem(12);
-			line-height: calc(15 / 12);
-		}
-	}
-}
+
