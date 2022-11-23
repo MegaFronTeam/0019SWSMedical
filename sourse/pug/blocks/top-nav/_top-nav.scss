@@ -6,8 +6,9 @@
 	position: fixed;
 	width: 100%;
 	z-index: 1000;
+	background-color: rgba(212, 234, 255, 0.1);
 	&.fixed {
-		background-color: rgba(212, 234, 255, 0.73);
+		background-color: rgba(#ffffff, 0.7);
 		backdrop-filter: blur(5px);
 	}
 	@include media-breakpoint-up(xxl) {

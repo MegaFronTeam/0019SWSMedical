@@ -1,35 +1,14 @@
 mixin headerBlock()
 	// start headerBlock
-	+b.headerBlock.section#headerBlock&attributes(attributes)
+	+b.headerBlock.section#headerBlock&attributes(attributes).bg-wrap
+		video.picture-bg(loop, autoplay, muted)
+			source(src="video/header-video.webm", type="video/webm")
+			source(src="video/header-video.mp4", type="video/mp4")
 		.container
-			+b.section-title.text-center
-				h2 headerBlock ds dfsdfdsfsd
+			+e.row.row
+				+e.col.col-sm-9.col-md-7.col-lg-5
+					+b.section-title
+						h1 ООО &laquo;МЕДИКЭЛ&nbsp;М&raquo;
+						p эксклюзивный дистрибьютор аппаратов &laquo;Искусственная почка&raquo; от&nbsp;китайской компании &laquo;SWS Medical&raquo;, ведущего мирового поставщика комплексного медицинского оборудования по&nbsp;очистке крови, на&nbsp;российском рынке
 
-			h1 Lorem ipsum dolor sit amet.
-			h2 Lorem ipsum dolor sit amet.
-			h3 Lorem ipsum dolor sit amet.
-			h4 Lorem ipsum dolor sit amet.
-			h5 Lorem ipsum dolor sit amet.
-			h6 Lorem ipsum dolor sit amet.
-			p Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure fuga necessitatibus ut omnis officia? Inventore nulla numquam excepturi iusto nihil natus accusamus, recusandae aspernatur ex corrupti. Aliquid natus quis magnam voluptates ducimus debitis vel consequatur. Soluta cum facilis eum laborum?
-			ul
-				li Lorem ipsum dolor sit amet consectetur.
-				li Lorem ipsum dolor sit amet consectetur.
-				li Lorem ipsum dolor sit amet consectetur.
-				li Lorem ipsum dolor sit amet consectetur.
-				li Lorem ipsum dolor sit amet consectetur.
-			+form-wrap
-				.row
-					.col-auto
-						+btn('Связаться с нами').btn.btn-primary
-					.col-auto
-						+btn('Связаться с нами').btn.btn-outline-primary
-					.col-auto
-						+input('Ваше имя', 'text')
-							+e.input-border
-					.col-auto
-						+input('Ваш номер телефона', 'tel')
-							+e.input-border
-					.col-auto
-						+in-c("checkbox", 'Lorem ipsum dolor sit amet.')
 	// end headerBlock

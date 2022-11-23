@@ -1,5 +1,5 @@
 .pixel-perfect {
-	top: -4032px;
+	top: 0;
 	display: block;
 	@include a-cent(x);
 	pointer-events: none;
@@ -63,7 +63,7 @@ body {
 		// background-color: $body-color;
 		background-color: rgba(212, 234, 255, 0.73);
 		// background-color: rgba($body-color, 0.8);
-		backdrop-filter: blur(4px);
+		backdrop-filter: blur(5px);
 		opacity: 0;
 		z-index: -1;
 		// left: 200px;
@@ -530,7 +530,7 @@ iframe {
 }
 .fancybox {
 	&__backdrop {
-		backdrop-filter: blur(4px);
+		backdrop-filter: blur(5px);
 	}
 	&__caption {
 		color: $body-color;
