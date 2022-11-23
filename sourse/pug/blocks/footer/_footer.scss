@@ -3,7 +3,7 @@
 	--sPT: #{rem(35)};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
-	padding-bottom: calc(var(--sPB) * 1.4);
+	padding-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--sPB) * 1.4);
 	&__row {
 		--bs-gutter-y: var(--bs-gutter-x);
 		@include media-breakpoint-up(xl) {
