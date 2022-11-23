@@ -94,6 +94,58 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
+
+	&__map {
+		position: relative;
+		height: rem(320);
+		margin-top: var(--sTPB);
+		// width: 100vw;
+		// margin-left: calc(-1 * (100vw - 100%) / 2);
+		&:after {
+			content: "";
+			@include mt(0.3s);
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background-image: linear-gradient(0deg, rgba(212, 234, 255, 0.4), rgba(212, 234, 255, 0.4));
+			pointer-events: none;
+			opacity: 1;
+		}
+		&:hover {
+			&:after {
+				opacity: 0;
+			}
+		}
+		@include media-breakpoint-up(sm) {
+			height: 350px;
+		}
+		@include media-breakpoint-up(md) {
+			height: rem(400);
+		}
+		@include media-breakpoint-up(xl) {
+			height: rem(500);
+		}
+		&-widget {
+			height: 100%;
+			width: 100%;
+			// @include media-breakpoint-up(md) {
+			// 	width: calc(((100vw - 100%) / 2) + 100%);
+			// }
+			& > * {
+				height: 100%;
+			}
+			.ymaps-2-1-79-ground-pane {
+				//  @include mt;
+				transition: filter 0.3s;
+			}
+			&:not(:hover) .ymaps-2-1-79-ground-pane {
+				// filter: saturate(0);
+				filter: grayscale(1);
+			}
+		}
+	}
 	@include media-breakpoint-up(xl) {
 	}
 	@include media-breakpoint-up(lg) {
