@@ -98,6 +98,7 @@
 		// left: 0;
 		right: 0;
 		background-color: $body-bg;
+		border-left: 2px solid #99CCFF;
 		&:not(.active) {
 			transform: translate3d(120%, 0, 0);
 			--opacity: 0;
