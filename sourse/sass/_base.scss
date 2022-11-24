@@ -267,12 +267,11 @@ ul {
 	&__content {
 		// opacity: 0;
 		// @include mt;
+		display: none;
 		&.active {
 			display: block;
 			// opacity: 1;
 		}
-
-		display: none;
 	}
 }
 

@@ -11,7 +11,7 @@ include ../blocks/sServices/_sServices.pug
 include ../blocks/sContact/_sContact.pug
 include ../blocks/sNews/_sNews.pug
 include ../blocks/sForm/_sForm.pug
-//- include ../blocks/sCatalog/_sCatalog.pug
+include ../blocks/sCatalog/_sCatalog.pug
 include ../blocks/footer/_footer.pug
 
 block variables
@@ -30,7 +30,7 @@ block pagecontent
 		//- +topLine
 	main
 		+headerBlock 
-		//- +sCatalog
+		+sCatalog
 		+sServices()
 		+sNews()
 		+sForm()

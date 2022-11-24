@@ -15,27 +15,107 @@ mixin sCatalog(data)
 	// start sCatalog
 	+b.sCatalog.section&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 sCatalog
-				p Выкупаем проблемные автомобили в день обращения
+			.tabs
+				.tabs__slider.tabs__slider--js.swiper
+					.tabs__caption.swiper-wrapper
+						.tabs__btn.swiper-slide.active
+							h2 Персональные данные
+						.tabs__btn.swiper-slide
+							h2 Информация
+						.tabs__btn.swiper-slide
+							h2 Контакты
+				.tabs__content.active
+					+b.catalog-card
+						+e.head
+							h2 SWS-6000
+							p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad rerum sequi velit vitae architecto nihil ea nemo, blanditiis provident et! Rem modi ipsa adipisci aliquid, saepe sed optio illo doloribus! 11111
+						+e.body
+							mixin row(b, p)
+								+e.row
+									.row
+										+e.col.col-auto
+											p
+												b!= b
+										.col
+											p!= p
+							.row
+								.col-lg-6
+									+e.item
+										h3 Общие данные
+										+row(`Размеры (ШХГХВ)`, `465&times;785&times;1515&nbsp;ММ`)
+										+row(`Вес`, `87&nbsp;КГ`)
+										+row(`Сетевое напряжение`, `100-240&nbsp;В, 50/60&nbsp;ГЦ`)
+										+row(`Внешние соединения`, `Обеспечивает резервное питание для работы насоса крови и&nbsp;системы контроля контура крови продолжительностью не&nbsp;менее 40&nbsp;минут`)
+										+row(`Возможность проведения процедур`, `RJ45, RS232, USB`)
+									+e.item
+										h3 Подача концентрата
+										+row(`Давление подачи`, `0-100 мБар`)
+										+row(`Потребление во время процедуры`, `31,8&nbsp;мл/мин`)
+									+e.item
+										h3 Экстракорпоральный контур
+										+row(`Предел измерения венозного давления`, `-700-800&nbsp;мм рт.&nbsp;ст.`)
+										+row(`Точность`, `&plusmn;5&nbsp;мм рт.&nbsp;ст. (-300-500&nbsp;мм рт.&nbsp;ст.) &plusmn;10&nbsp;мм рт.&nbsp;ст. (Другой)`)
+										+row(`Предел измерения артериального давления`, `-700-800&nbsp;мм рт.&nbsp;ст.`)
+										+row(`Точность`, `&plusmn;5&nbsp;мм рт.&nbsp;ст. (-300-500&nbsp;мм рт.&nbsp;ст.) &plusmn;10&nbsp;мм рт.&nbsp;ст. (Другой)`)
+										+row(`Предел измерения трансмембранного давления`, `-700-800&nbsp;мм рт.&nbsp;ст.`)
+										+row(`Точность`, `&plusmn;5&nbsp;мм рт.&nbsp;ст. (-300-500&nbsp;мм рт.&nbsp;ст.) &plusmn;10&nbsp;мм рт.&nbsp;ст. (Другой)`)
+										+row(`Рабочий диапазон насоса крови`, `0-650&nbsp;мл/мин`)
+										+row(`Точность диапазона`, `&plusmn;10&nbsp;мл/мин или&nbsp;&plusmn;10%`)
+										+row(`Система одноигольного диализа`, `наличие`)
+										+row(`Детектор утечки крови`, `Чувствительность &lt; 0,35&nbsp;мл/мин (Нс1 = 32%)`)
+										+row(`Детектор воздуха`, `Ультразвуковой детектор с&nbsp;чувствительностью обнаружения &gt; 0,02&nbsp;мл или &gt; 0,0003&nbsp;мл, непрерывные микропузыри`)
+										+row(`Гепариновый насос`, `Размеры шприцев 10&nbsp;мл, 20&nbsp;мл, 30&nbsp;мл, 50&nbsp;мл`)
+										+row(`Пределы установки гепаринового насоса`, `0-10&nbsp;мл/час`)
+										+row(`Точность`, `&plusmn;5%&nbsp;или &plusmn;0,2&nbsp;мл`)
+										+row(`Объем болюса`, `0,1-5&nbsp;мл`)
+										
+								.col-lg-6
+									+e.item
+										h3 Подача воды
+										+row(`Температура воды на&nbsp;входе`, `5-30&deg;&nbsp;С`)
+										+row(`Давление воды на&nbsp;входе`, `0.5-8.0 Бар`)
+										+row(`Потребление воды во&nbsp;время процедуры`, `500&nbsp;мл/мин`)
+									+e.item
+										h3 Система диализата
+										+row(`Поток диализата`, `Устанавливамый в&nbsp;диапазоне 100-1000&nbsp;мл/мин`)
+										+row(`Температура диализата`, `33-40&deg;&nbsp;С`)
+										+row(`Точность`, `&plusmn;0.5&deg;&nbsp;С`)
+										+row(`Пределы проводимости диализата`, `12,0-18,0&nbsp;мСм/см`)
+										+row(`Точность`, `&plusmn;0.1&nbsp;мСм/см`)
+										+row(`Поток субституата`, `30-650&nbsp;мл/мин`)
+										+row(`Точность`, `&plusmn;10&nbsp;мл/мин или&nbsp;10%`)
+									+e.item
+										h3 Ультрафильтрация
+										+row(`Пределы скорости ультрафильтрации`, `0-6000&nbsp;мл/ч`)
+										+row(`Точность`, `&plusmn;1&nbsp;% или &plusmn;30&nbsp;мл/ч`)
+									+e.item
+										h3 Автоматическое устройство мониторинга кровяного давления
+										+row(`Диапазон отображения`, `0-300&nbsp;мм рт.&nbsp;ст`)
+										+row(`Диапазон измерения (взрослый )`, `40-245&nbsp;мм рт.&nbsp;ст`)
+									+e.item
+										h3 Программы промывки и&nbsp;дезинфекции
+										h6 Различные режимы программируемой во&nbsp;времени тепловой и&nbsp;химической дезинфекции с&nbsp;минимальным расходом дезинфицирующего средства
+										+row(`Холодная промывка`, `10-30 мин`)
+										+row(`Химическая дезинфекция`, `16-70 мин`)
+										+row(`Декальцификация`, `16-70&nbsp;мин. После бикарбонатного диализа используйте&nbsp;30% лимонную кислоту для декальцинации`)
+										+row(`Горячая промывка`, `21-90 мин`)
+										+row(`Промывка + декальцинация`, `22-110 мин`)
+									+e.item--link
+										.row
+											.col-auto
+												small Для подбора оптимального расходного материала, для проведения безопасного лечения обращайтесь&nbsp;в
+											.col-auto
+												+e.link(href="#") 
+													span Medical-m
+													+icon('box-arrow-right')
 
-			+e.row.row
-				- const wrapClass="col-3"
-				+e.col(class= wrapClass)
-					+product-item(`1`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`2`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`3`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`4`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`5`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`6`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`7`,``,``,``) 
-				+e.col(class= wrapClass)
-					+product-item(`8`,``,``,``) 
+										
+				.tabs__content
+					h2 SWS-6000A
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad rerum sequi velit vitae architecto nihil ea nemo, blanditiis provident et! Rem modi ipsa adipisci aliquid, saepe sed optio illo doloribus! 22222
+				.tabs__content
+					h2 SWS-4000 
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad rerum sequi velit vitae architecto nihil ea nemo, blanditiis provident et! Rem modi ipsa adipisci aliquid, saepe sed optio illo doloribus! 33333
+
 
 	// end sCatalog
