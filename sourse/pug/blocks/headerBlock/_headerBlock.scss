@@ -32,7 +32,19 @@
 		pointer-events: none;
 		z-index: -1;
 	}
-
+	.floating-imgs {
+		img {
+			opacity: 0.32;
+			&:first-child {
+				top: 3%;
+				right: -4%;
+			}
+			&:nth-child(2) {
+				top: 0;
+				right: -7%;
+			}
+		}
+	}
 	&__row {
 		// --bs-gutter-x: #{rem()};
 		--bs-gutter-y: var(--bs-gutter-x);
