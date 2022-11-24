@@ -33,34 +33,12 @@
 } // end.sCatalog
 
 .catalog-card {
-	&__row {
-		padding: rem(15) rem(30) rem(15) rem(15);
-		position: relative;
-		margin-bottom: rem(9);
-		@include media-breakpoint-up(xl) {
-			padding: rem(20) rem(40) rem(20) rem(20);
+	&__body {
+		h2 {
+			margin-bottom: var(--sTPB);
 		}
-		&:last-child {
-			margin-bottom: 0;
-		}
-		&::before {
-			content: "";
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			left: 0;
-			top: 0;
-			background-image: linear-gradient(270deg, #ffffff 0%, #f4f7fb 21.87%, #fbfdff 55.21%, #fafcff 92.71%);
-			background-size: 100%;
-			background-position: top right;
-			z-index: -1;
-		}
-		.row {
-			align-items: center;
-			--bs-gutter-y: caLc(var(--bs-gutter-x) / 2);
-			@include media-breakpoint-down(xl) {
-				--bs-gutter-x: #{rem(15)};
-			}
+		& > .row {
+			--bs-gutter-y: var(--sTPB);
 		}
 	}
 	&__col {
@@ -111,6 +89,36 @@
 				font-weight: 300;
 			}
 		}
+		.catalog-card__row {
+			padding: rem(15) rem(30) rem(15) rem(15);
+			position: relative;
+			margin-bottom: rem(9);
+			@include media-breakpoint-up(xl) {
+				padding: rem(20) rem(40) rem(20) rem(20);
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+			&::before {
+				content: "";
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				background-image: linear-gradient(270deg, #ffffff 0%, #f4f7fb 21.87%, #fbfdff 55.21%, #fafcff 92.71%);
+				background-size: 100%;
+				background-position: top right;
+				z-index: -1;
+			}
+			.row {
+				align-items: center;
+				--bs-gutter-y: caLc(var(--bs-gutter-x) / 2);
+				@include media-breakpoint-down(xl) {
+					--bs-gutter-x: #{rem(15)};
+				}
+			}
+		}
 	}
 	&__link {
 		display: flex;
@@ -119,12 +127,12 @@
 		font-size: rem(15);
 		line-height: 1.2;
 		&:not(:hover) {
-			color: #D83A41;
+			color: #d83a41;
 			text-decoration: underline;
 		}
 		span {
 			display: block;
-			font-size: inherit;;
+			font-size: inherit;
 		}
 		.icon {
 			font-size: rem(20);

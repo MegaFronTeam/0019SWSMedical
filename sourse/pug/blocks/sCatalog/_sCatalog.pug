@@ -1,15 +1,12 @@
-mixin product-item(i, t, p ,pr)
-	+b.ARTICLE.product-item
-		+e.img-wrap(href="#")
-			//- если надо картинку по центру  вывести использовать обертку .img-wrap-center  - если нет- убираем
-			.img-wrap-center 
-				+img(`img/prod-${i}.jpg`)
-		+e.caption
-			+e.title!= t
-			+e.text!= p
-			+e.price!= pr
-			+e.btn(href='#')
-	// /.product-item
+mixin catalog-card-row(b, p)
+	+e.row
+		.row
+			+e.col.col-auto
+				p
+					b!= b
+			.col
+				p!= p
+	// /catalog-card-row
 
 mixin sCatalog(data)
 	// start sCatalog
@@ -18,88 +15,86 @@ mixin sCatalog(data)
 			.tabs
 				.tabs__slider.tabs__slider--js.swiper
 					.tabs__caption.swiper-wrapper
-						.tabs__btn.swiper-slide.active
-							h2 Персональные данные
-						.tabs__btn.swiper-slide
-							h2 Информация
-						.tabs__btn.swiper-slide
-							h2 Контакты
+						+e.btn.tabs__btn.swiper-slide.active
+							h2 SWS-6000
+						+e.btn.tabs__btn.swiper-slide
+							h2 SWS-6000A
+						+e.btn.tabs__btn.swiper-slide
+							h2 SWS-4000
 				.tabs__content.active
 					+b.catalog-card
 						+e.head
-							h2 SWS-6000
-							p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad rerum sequi velit vitae architecto nihil ea nemo, blanditiis provident et! Rem modi ipsa adipisci aliquid, saepe sed optio illo doloribus! 11111
+							.row
+								.col-4
+									h3 Аппарат для гемодиализа
+									h2 SWS-6000
+								.col
+								
 						+e.body
-							mixin row(b, p)
-								+e.row
-									.row
-										+e.col.col-auto
-											p
-												b!= b
-										.col
-											p!= p
+							h2 Технические характеристики
 							.row
 								.col-lg-6
 									+e.item
 										h3 Общие данные
-										+row(`Размеры (ШХГХВ)`, `465&times;785&times;1515&nbsp;ММ`)
-										+row(`Вес`, `87&nbsp;КГ`)
-										+row(`Сетевое напряжение`, `100-240&nbsp;В, 50/60&nbsp;ГЦ`)
-										+row(`Внешние соединения`, `Обеспечивает резервное питание для работы насоса крови и&nbsp;системы контроля контура крови продолжительностью не&nbsp;менее 40&nbsp;минут`)
-										+row(`Возможность проведения процедур`, `RJ45, RS232, USB`)
+										+catalog-card-row(`Размеры (ШХГХВ)`, `465&times;785&times;1515&nbsp;ММ`)
+										+catalog-card-row(`Вес`, `87&nbsp;КГ`)
+										+catalog-card-row(`Сетевое напряжение`, `100-240&nbsp;В, 50/60&nbsp;ГЦ`)
+										+catalog-card-row(`Внешние соединения`, `Обеспечивает резервное питание для работы насоса крови и&nbsp;системы контроля контура крови продолжительностью не&nbsp;менее 40&nbsp;минут`)
+										+catalog-card-row(`Возможность проведения процедур`, `RJ45, RS232, USB`)
 									+e.item
 										h3 Подача концентрата
-										+row(`Давление подачи`, `0-100 мБар`)
-										+row(`Потребление во время процедуры`, `31,8&nbsp;мл/мин`)
+										+catalog-card-row(`Давление подачи`, `0-100 мБар`)
+										+catalog-card-row(`Потребление во время процедуры`, `31,8&nbsp;мл/мин`)
 									+e.item
 										h3 Экстракорпоральный контур
-										+row(`Предел измерения венозного давления`, `-700-800&nbsp;мм рт.&nbsp;ст.`)
-										+row(`Точность`, `&plusmn;5&nbsp;мм рт.&nbsp;ст. (-300-500&nbsp;мм рт.&nbsp;ст.) &plusmn;10&nbsp;мм рт.&nbsp;ст. (Другой)`)
-										+row(`Предел измерения артериального давления`, `-700-800&nbsp;мм рт.&nbsp;ст.`)
-										+row(`Точность`, `&plusmn;5&nbsp;мм рт.&nbsp;ст. (-300-500&nbsp;мм рт.&nbsp;ст.) &plusmn;10&nbsp;мм рт.&nbsp;ст. (Другой)`)
-										+row(`Предел измерения трансмембранного давления`, `-700-800&nbsp;мм рт.&nbsp;ст.`)
-										+row(`Точность`, `&plusmn;5&nbsp;мм рт.&nbsp;ст. (-300-500&nbsp;мм рт.&nbsp;ст.) &plusmn;10&nbsp;мм рт.&nbsp;ст. (Другой)`)
-										+row(`Рабочий диапазон насоса крови`, `0-650&nbsp;мл/мин`)
-										+row(`Точность диапазона`, `&plusmn;10&nbsp;мл/мин или&nbsp;&plusmn;10%`)
-										+row(`Система одноигольного диализа`, `наличие`)
-										+row(`Детектор утечки крови`, `Чувствительность &lt; 0,35&nbsp;мл/мин (Нс1 = 32%)`)
-										+row(`Детектор воздуха`, `Ультразвуковой детектор с&nbsp;чувствительностью обнаружения &gt; 0,02&nbsp;мл или &gt; 0,0003&nbsp;мл, непрерывные микропузыри`)
-										+row(`Гепариновый насос`, `Размеры шприцев 10&nbsp;мл, 20&nbsp;мл, 30&nbsp;мл, 50&nbsp;мл`)
-										+row(`Пределы установки гепаринового насоса`, `0-10&nbsp;мл/час`)
-										+row(`Точность`, `&plusmn;5%&nbsp;или &plusmn;0,2&nbsp;мл`)
-										+row(`Объем болюса`, `0,1-5&nbsp;мл`)
+										+catalog-card-row(`Предел измерения венозного давления`, `-700-800&nbsp;мм рт.&nbsp;ст.`)
+										+catalog-card-row(`Точность`, `&plusmn;5&nbsp;мм рт.&nbsp;ст. (-300-500&nbsp;мм рт.&nbsp;ст.) &plusmn;10&nbsp;мм рт.&nbsp;ст. (Другой)`)
+										+catalog-card-row(`Предел измерения артериального давления`, `-700-800&nbsp;мм рт.&nbsp;ст.`)
+										+catalog-card-row(`Точность`, `&plusmn;5&nbsp;мм рт.&nbsp;ст. (-300-500&nbsp;мм рт.&nbsp;ст.) &plusmn;10&nbsp;мм рт.&nbsp;ст. (Другой)`)
+										+catalog-card-row(`Предел измерения трансмембранного давления`, `-700-800&nbsp;мм рт.&nbsp;ст.`)
+										+catalog-card-row(`Точность`, `&plusmn;5&nbsp;мм рт.&nbsp;ст. (-300-500&nbsp;мм рт.&nbsp;ст.) &plusmn;10&nbsp;мм рт.&nbsp;ст. (Другой)`)
+										+catalog-card-row(`Рабочий диапазон насоса крови`, `0-650&nbsp;мл/мин`)
+										+catalog-card-row(`Точность диапазона`, `&plusmn;10&nbsp;мл/мин или&nbsp;&plusmn;10%`)
+										+catalog-card-row(`Система одноигольного диализа`, `наличие`)
+										+catalog-card-row(`Детектор утечки крови`, `Чувствительность &lt; 0,35&nbsp;мл/мин (Нс1 = 32%)`)
+										+catalog-card-row(`Детектор воздуха`, `Ультразвуковой детектор с&nbsp;чувствительностью обнаружения &gt; 0,02&nbsp;мл или &gt; 0,0003&nbsp;мл, непрерывные микропузыри`)
+										+catalog-card-row(`Гепариновый насос`, `Размеры шприцев 10&nbsp;мл, 20&nbsp;мл, 30&nbsp;мл, 50&nbsp;мл`)
+										+catalog-card-row(`Пределы установки гепаринового насоса`, `0-10&nbsp;мл/час`)
+										+catalog-card-row(`Точность`, `&plusmn;5%&nbsp;или &plusmn;0,2&nbsp;мл`)
+										+catalog-card-row(`Объем болюса`, `0,1-5&nbsp;мл`)
 										
 								.col-lg-6
 									+e.item
 										h3 Подача воды
-										+row(`Температура воды на&nbsp;входе`, `5-30&deg;&nbsp;С`)
-										+row(`Давление воды на&nbsp;входе`, `0.5-8.0 Бар`)
-										+row(`Потребление воды во&nbsp;время процедуры`, `500&nbsp;мл/мин`)
+										+catalog-card-row(`Температура воды на&nbsp;входе`, `5-30&deg;&nbsp;С`)
+										+catalog-card-row(`Давление воды на&nbsp;входе`, `0.5-8.0 Бар`)
+										+catalog-card-row(`Потребление воды во&nbsp;время процедуры`, `500&nbsp;мл/мин`)
 									+e.item
 										h3 Система диализата
-										+row(`Поток диализата`, `Устанавливамый в&nbsp;диапазоне 100-1000&nbsp;мл/мин`)
-										+row(`Температура диализата`, `33-40&deg;&nbsp;С`)
-										+row(`Точность`, `&plusmn;0.5&deg;&nbsp;С`)
-										+row(`Пределы проводимости диализата`, `12,0-18,0&nbsp;мСм/см`)
-										+row(`Точность`, `&plusmn;0.1&nbsp;мСм/см`)
-										+row(`Поток субституата`, `30-650&nbsp;мл/мин`)
-										+row(`Точность`, `&plusmn;10&nbsp;мл/мин или&nbsp;10%`)
+										+catalog-card-row(`Поток диализата`, `Устанавливамый в&nbsp;диапазоне 100-1000&nbsp;мл/мин`)
+										+catalog-card-row(`Температура диализата`, `33-40&deg;&nbsp;С`)
+										+catalog-card-row(`Точность`, `&plusmn;0.5&deg;&nbsp;С`)
+										+catalog-card-row(`Пределы проводимости диализата`, `12,0-18,0&nbsp;мСм/см`)
+										+catalog-card-row(`Точность`, `&plusmn;0.1&nbsp;мСм/см`)
+										+catalog-card-row(`Поток субституата`, `30-650&nbsp;мл/мин`)
+										+catalog-card-row(`Точность`, `&plusmn;10&nbsp;мл/мин или&nbsp;10%`)
 									+e.item
 										h3 Ультрафильтрация
-										+row(`Пределы скорости ультрафильтрации`, `0-6000&nbsp;мл/ч`)
-										+row(`Точность`, `&plusmn;1&nbsp;% или &plusmn;30&nbsp;мл/ч`)
+										+catalog-card-row(`Пределы скорости ультрафильтрации`, `0-6000&nbsp;мл/ч`)
+										+catalog-card-row(`Точность`, `&plusmn;1&nbsp;% или &plusmn;30&nbsp;мл/ч`)
 									+e.item
 										h3 Автоматическое устройство мониторинга кровяного давления
-										+row(`Диапазон отображения`, `0-300&nbsp;мм рт.&nbsp;ст`)
-										+row(`Диапазон измерения (взрослый )`, `40-245&nbsp;мм рт.&nbsp;ст`)
+										+catalog-card-row(`Диапазон отображения`, `0-300&nbsp;мм рт.&nbsp;ст`)
+										+catalog-card-row(`Диапазон измерения (взрослый )`, `40-245&nbsp;мм рт.&nbsp;ст`)
 									+e.item
 										h3 Программы промывки и&nbsp;дезинфекции
 										h6 Различные режимы программируемой во&nbsp;времени тепловой и&nbsp;химической дезинфекции с&nbsp;минимальным расходом дезинфицирующего средства
-										+row(`Холодная промывка`, `10-30 мин`)
-										+row(`Химическая дезинфекция`, `16-70 мин`)
-										+row(`Декальцификация`, `16-70&nbsp;мин. После бикарбонатного диализа используйте&nbsp;30% лимонную кислоту для декальцинации`)
-										+row(`Горячая промывка`, `21-90 мин`)
-										+row(`Промывка + декальцинация`, `22-110 мин`)
+										+catalog-card-row(`Холодная промывка`, `10-30 мин`)
+										+catalog-card-row(`Химическая дезинфекция`, `16-70 мин`)
+										+catalog-card-row(`Декальцификация`, `16-70&nbsp;мин. После бикарбонатного диализа используйте&nbsp;30% лимонную кислоту для декальцинации`)
+										+catalog-card-row(`Горячая промывка`, `21-90 мин`)
+										+catalog-card-row(`Горячая дезинфекция`, `26-90 мин`)
+										+catalog-card-row(`Промывка + декальцинация`, `22-110 мин`)
 									+e.item--link
 										.row
 											.col-auto
@@ -109,13 +104,169 @@ mixin sCatalog(data)
 													span Medical-m
 													+icon('box-arrow-right')
 
+				.tabs__content
+					+b.catalog-card
+						+e.head
+							.row
+								.col-4
+									h3 Аппарат для гемодиализа
+									h2 SWS-6000A
+								.col
+						+e.body
+							h2 Технические характеристики
+							.row
+								.col-lg-6
+									+e.item
+										h3 Общие данные
+										+catalog-card-row(`Размеры (ШХГХВ)`, `465&times;785&times;1515&nbsp;ММ`)
+										+catalog-card-row(`Вес`, `87&nbsp;КГ`)
+										+catalog-card-row(`Сетевое напряжение`, `100-240&nbsp;В, 50/60&nbsp;ГЦ`)
+										+catalog-card-row(`Внешние соединения`, `Обеспечивает резервное питание для работы насоса крови и&nbsp;системы контроля контура крови продолжительностью не&nbsp;менее 40&nbsp;минут`)
+										+catalog-card-row(`Возможность проведения процедур`, `RJ45, RS232, USB`)
+									+e.item
+										h3 Подача концентрата
+										+catalog-card-row(`Давление подачи`, `0-100 мБар`)
+										+catalog-card-row(`Потребление во время процедуры`, `31,8&nbsp;мл/мин`)
+									+e.item
+										h3 Экстракорпоральный контур
+										+catalog-card-row(`Предел измерения венозного давления`, `-700-800&nbsp;мм рт.&nbsp;ст.`)
+										+catalog-card-row(`Точность`, `&plusmn;5&nbsp;мм рт.&nbsp;ст. (-300-500&nbsp;мм рт.&nbsp;ст.) &plusmn;10&nbsp;мм рт.&nbsp;ст. (Другой)`)
+										+catalog-card-row(`Предел измерения артериального давления`, `-700-800&nbsp;мм рт.&nbsp;ст.`)
+										+catalog-card-row(`Точность`, `&plusmn;5&nbsp;мм рт.&nbsp;ст. (-300-500&nbsp;мм рт.&nbsp;ст.) &plusmn;10&nbsp;мм рт.&nbsp;ст. (Другой)`)
+										+catalog-card-row(`Предел измерения трансмембранного давления`, `-700-800&nbsp;мм рт.&nbsp;ст.`)
+										+catalog-card-row(`Точность`, `&plusmn;5&nbsp;мм рт.&nbsp;ст. (-300-500&nbsp;мм рт.&nbsp;ст.) &plusmn;10&nbsp;мм рт.&nbsp;ст. (Другой)`)
+										+catalog-card-row(`Рабочий диапазон насоса крови`, `0-650&nbsp;мл/мин`)
+										+catalog-card-row(`Точность диапазона`, `&plusmn;10&nbsp;мл/мин или&nbsp;&plusmn;10%`)
+										+catalog-card-row(`Система одноигольного диализа`, `наличие`)
+										+catalog-card-row(`Детектор утечки крови`, `Чувствительность &lt; 0,35&nbsp;мл/мин (Нс1 = 32%)`)
+										+catalog-card-row(`Детектор воздуха`, `Ультразвуковой детектор с&nbsp;чувствительностью обнаружения &gt; 0,02&nbsp;мл или &gt; 0,0003&nbsp;мл, непрерывные микропузыри`)
+										+catalog-card-row(`Гепариновый насос`, `Размеры шприцев 10&nbsp;мл, 20&nbsp;мл, 30&nbsp;мл, 50&nbsp;мл`)
+										+catalog-card-row(`Пределы установки гепаринового насоса`, `0-10&nbsp;мл/час`)
+										+catalog-card-row(`Точность`, `&plusmn;5%&nbsp;или &plusmn;0,2&nbsp;мл`)
+										+catalog-card-row(`Объем болюса`, `0,1-5&nbsp;мл`)
 										
+								.col-lg-6
+									+e.item
+										h3 Подача воды
+										+catalog-card-row(`Температура воды на&nbsp;входе`, `5-30&deg;&nbsp;С`)
+										+catalog-card-row(`Давление воды на&nbsp;входе`, `0.5-8.0 Бар`)
+										+catalog-card-row(`Потребление воды во&nbsp;время процедуры`, `500&nbsp;мл/мин`)
+									+e.item
+										h3 Система диализата
+										+catalog-card-row(`Поток диализата`, `Устанавливамый в&nbsp;диапазоне 100-1000&nbsp;мл/мин`)
+										+catalog-card-row(`Температура диализата`, `33-40&deg;&nbsp;С`)
+										+catalog-card-row(`Точность`, `&plusmn;0.5&deg;&nbsp;С`)
+										+catalog-card-row(`Пределы проводимости диализата`, `12,0-18,0&nbsp;мСм/см`)
+										+catalog-card-row(`Точность`, `&plusmn;0.1&nbsp;мСм/см`)
+										+catalog-card-row(`Поток субституата`, `30-650&nbsp;мл/мин`)
+										+catalog-card-row(`Точность`, `&plusmn;10&nbsp;мл/мин или&nbsp;10%`)
+									+e.item
+										h3 Ультрафильтрация
+										+catalog-card-row(`Пределы скорости ультрафильтрации`, `0-6000&nbsp;мл/ч`)
+										+catalog-card-row(`Точность`, `&plusmn;1&nbsp;% или &plusmn;30&nbsp;мл/ч`)
+									+e.item
+										h3 Автоматическое устройство мониторинга кровяного давления
+										+catalog-card-row(`Диапазон отображения`, `0-300&nbsp;мм рт.&nbsp;ст`)
+										+catalog-card-row(`Диапазон измерения (взрослый )`, `40-245&nbsp;мм рт.&nbsp;ст`)
+									+e.item
+										h3 Программы промывки и&nbsp;дезинфекции
+										h6 Различные режимы программируемой во&nbsp;времени тепловой и&nbsp;химической дезинфекции с&nbsp;минимальным расходом дезинфицирующего средства
+										+catalog-card-row(`Холодная промывка`, `10-30 мин`)
+										+catalog-card-row(`Химическая дезинфекция`, `16-70 мин`)
+										+catalog-card-row(`Декальцификация`, `16-70&nbsp;мин. После бикарбонатного диализа используйте&nbsp;30% лимонную кислоту для декальцинации`)
+										+catalog-card-row(`Горячая промывка`, `21-90 мин`)
+										+catalog-card-row(`Горячая дезинфекция`, `26-90 мин`)
+										+catalog-card-row(`Промывка + декальцинация`, `22-110 мин`)
+									+e.item--link
+										.row
+											.col-auto
+												small Для подбора оптимального расходного материала, для проведения безопасного лечения обращайтесь&nbsp;в
+											.col-auto
+												+e.link(href="#") 
+													span Medical-m
+													+icon('box-arrow-right')
+
 				.tabs__content
-					h2 SWS-6000A
-					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad rerum sequi velit vitae architecto nihil ea nemo, blanditiis provident et! Rem modi ipsa adipisci aliquid, saepe sed optio illo doloribus! 22222
-				.tabs__content
-					h2 SWS-4000 
-					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad rerum sequi velit vitae architecto nihil ea nemo, blanditiis provident et! Rem modi ipsa adipisci aliquid, saepe sed optio illo doloribus! 33333
+					+b.catalog-card
+						+e.head
+							.row
+								.col-4
+									h3 Аппарат для гемодиализа
+									h2 SWS-4000
+								.col
+						+e.body
+							h2 Технические характеристики
+							.row
+								.col-lg-6
+									+e.item
+										h3 Общие данные
+										+catalog-card-row(`Размеры (ШХГХВ)`, `465&times;785&times;1515&nbsp;ММ`)
+										+catalog-card-row(`Вес`, `87&nbsp;КГ`)
+										+catalog-card-row(`Сетевое напряжение`, `100-240&nbsp;В, 50/60&nbsp;ГЦ`)
+										+catalog-card-row(`Внешние соединения`, `Обеспечивает резервное питание для работы насоса крови и&nbsp;системы контроля контура крови продолжительностью не&nbsp;менее 40&nbsp;минут`)
+										+catalog-card-row(`Возможность проведения процедур`, `RJ45, RS232, USB`)
+									+e.item
+										h3 Подача концентрата
+										+catalog-card-row(`Давление подачи`, `0-100 мБар`)
+										+catalog-card-row(`Потребление во время процедуры`, `31,8&nbsp;мл/мин`)
+									+e.item
+										h3 Экстракорпоральный контур
+										+catalog-card-row(`Предел измерения венозного давления`, `-700-800&nbsp;мм рт.&nbsp;ст.`)
+										+catalog-card-row(`Точность`, `&plusmn;5&nbsp;мм рт.&nbsp;ст. (-300-500&nbsp;мм рт.&nbsp;ст.) &plusmn;10&nbsp;мм рт.&nbsp;ст. (Другой)`)
+										+catalog-card-row(`Предел измерения артериального давления`, `-700-800&nbsp;мм рт.&nbsp;ст.`)
+										+catalog-card-row(`Точность`, `&plusmn;5&nbsp;мм рт.&nbsp;ст. (-300-500&nbsp;мм рт.&nbsp;ст.) &plusmn;10&nbsp;мм рт.&nbsp;ст. (Другой)`)
+										+catalog-card-row(`Предел измерения трансмембранного давления`, `-700-800&nbsp;мм рт.&nbsp;ст.`)
+										+catalog-card-row(`Точность`, `&plusmn;5&nbsp;мм рт.&nbsp;ст. (-300-500&nbsp;мм рт.&nbsp;ст.) &plusmn;10&nbsp;мм рт.&nbsp;ст. (Другой)`)
+										+catalog-card-row(`Рабочий диапазон насоса крови`, `0-650&nbsp;мл/мин`)
+										+catalog-card-row(`Точность диапазона`, `&plusmn;10&nbsp;мл/мин или&nbsp;&plusmn;10%`)
+										+catalog-card-row(`Система одноигольного диализа`, `наличие`)
+										+catalog-card-row(`Детектор утечки крови`, `Чувствительность &lt; 0,35&nbsp;мл/мин (Нс1 = 32%)`)
+										+catalog-card-row(`Детектор воздуха`, `Ультразвуковой детектор с&nbsp;чувствительностью обнаружения &gt; 0,02&nbsp;мл или &gt; 0,0003&nbsp;мл, непрерывные микропузыри`)
+										+catalog-card-row(`Гепариновый насос`, `Размеры шприцев 10&nbsp;мл, 20&nbsp;мл, 30&nbsp;мл, 50&nbsp;мл`)
+										+catalog-card-row(`Пределы установки гепаринового насоса`, `0-10&nbsp;мл/час`)
+										+catalog-card-row(`Точность`, `&plusmn;5%&nbsp;или &plusmn;0,2&nbsp;мл`)
+										+catalog-card-row(`Объем болюса`, `0,1-5&nbsp;мл`)
+										
+								.col-lg-6
+									+e.item
+										h3 Подача воды
+										+catalog-card-row(`Температура воды на&nbsp;входе`, `5-30&deg;&nbsp;С`)
+										+catalog-card-row(`Давление воды на&nbsp;входе`, `0.5-8.0 Бар`)
+										+catalog-card-row(`Потребление воды во&nbsp;время процедуры`, `500&nbsp;мл/мин`)
+									+e.item
+										h3 Система диализата
+										+catalog-card-row(`Поток диализата`, `Устанавливамый в&nbsp;диапазоне 100-1000&nbsp;мл/мин`)
+										+catalog-card-row(`Температура диализата`, `33-40&deg;&nbsp;С`)
+										+catalog-card-row(`Точность`, `&plusmn;0.5&deg;&nbsp;С`)
+										+catalog-card-row(`Пределы проводимости диализата`, `12,0-18,0&nbsp;мСм/см`)
+										+catalog-card-row(`Точность`, `&plusmn;0.1&nbsp;мСм/см`)
+										+catalog-card-row(`Поток субституата`, `30-650&nbsp;мл/мин`)
+										+catalog-card-row(`Точность`, `&plusmn;10&nbsp;мл/мин или&nbsp;10%`)
+									+e.item
+										h3 Ультрафильтрация
+										+catalog-card-row(`Пределы скорости ультрафильтрации`, `0-6000&nbsp;мл/ч`)
+										+catalog-card-row(`Точность`, `&plusmn;1&nbsp;% или &plusmn;30&nbsp;мл/ч`)
+									+e.item
+										h3 Автоматическое устройство мониторинга кровяного давления
+										+catalog-card-row(`Диапазон отображения`, `0-300&nbsp;мм рт.&nbsp;ст`)
+										+catalog-card-row(`Диапазон измерения (взрослый )`, `40-245&nbsp;мм рт.&nbsp;ст`)
+									+e.item
+										h3 Программы промывки и&nbsp;дезинфекции
+										h6 Различные режимы программируемой во&nbsp;времени тепловой и&nbsp;химической дезинфекции с&nbsp;минимальным расходом дезинфицирующего средства
+										+catalog-card-row(`Холодная промывка`, `10-30 мин`)
+										+catalog-card-row(`Химическая дезинфекция`, `16-70 мин`)
+										+catalog-card-row(`Декальцификация`, `16-70&nbsp;мин. После бикарбонатного диализа используйте&nbsp;30% лимонную кислоту для декальцинации`)
+										+catalog-card-row(`Горячая промывка`, `21-90 мин`)
+										+catalog-card-row(`Горячая дезинфекция`, `26-90 мин`)
+										+catalog-card-row(`Промывка + декальцинация`, `22-110 мин`)
+									+e.item--link
+										.row
+											.col-auto
+												small Для подбора оптимального расходного материала, для проведения безопасного лечения обращайтесь&nbsp;в
+											.col-auto
+												+e.link(href="#") 
+													span Medical-m
+													+icon('box-arrow-right')
 
 
 	// end sCatalog
