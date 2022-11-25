@@ -142,7 +142,7 @@
 	}
 	&__col-main {
 		@include media-breakpoint-up(lg) {
-			width: 27%;
+			width: 25%;
 		}
 		@include media-breakpoint-up(xl) {
 			width: 31%;
@@ -182,7 +182,10 @@
 	}
 	&__wrap {
 		@include block(390, 590);
-		overflow: hidden;
+		overflow-x: hidden;
+		overflow-y: auto;
+		font-weight: 300;
+		font-size: 14px;
 		// padding: calc(var(--paddingSize) * 3) var(--paddingSize) var(--paddingSize) calc(var(--paddingSize) * 3);
 		& > *,
 		img {
@@ -310,6 +313,9 @@
 		&__content {
 			&:not(.active) {
 				display: none;
+			}
+			ul {
+				list-style: none;
 			}
 		}
 		&__btn {
