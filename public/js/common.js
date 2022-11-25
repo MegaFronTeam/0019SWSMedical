@@ -386,6 +386,10 @@ function eventHandler() {
 	const TabsSlider = new Swiper(".tabs__slider--js", {
 		slidesPerView: 'auto',
 	});
+	const TabsSlider2 = new Swiper(".tabs-inner__slider--js", {
+		slidesPerView: 'auto',
+		slideToClickedSlide: true,
+	});
 
 	// modal window
 
