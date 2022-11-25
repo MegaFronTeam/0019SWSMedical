@@ -13,23 +13,46 @@ mixin sCatalog(data)
 	+b.sCatalog.section&attributes(attributes)
 		.container
 			.tabs
-				.tabs__slider.tabs__slider--js.swiper
-					.tabs__caption.swiper-wrapper
-						+e.btn.tabs__btn.swiper-slide.active
-							h2 SWS-6000
-						+e.btn.tabs__btn.swiper-slide
-							h2 SWS-6000A
-						+e.btn.tabs__btn.swiper-slide
-							h2 SWS-4000
+				.tabs__caption
+					+e.btn.tabs__btn.active
+						h4 SWS-6000
+					+e.btn.tabs__btn
+						h4 SWS-6000A
+					+e.btn.tabs__btn
+						h4 SWS-4000
+				
 				.tabs__content.active
 					+b.catalog-card
 						+e.head
 							.row
-								.col-4
+								+e.col.col-auto
 									h3 Аппарат для гемодиализа
 									h2 SWS-6000
 								.col
-								
+									.tabs-inner
+										//- .tabs-inner__slider.tabs-inner__slider--js.swiper
+										//- 	.tabs-inner__caption.swiper-wrapper
+										//- 		.tabs-inner__btn.swiper-slide.active
+										//- 			h2 SWS-6000
+										//- 		.tabs-inner__btn.swiper-slide
+										//- 			h2 SWS-6000A
+										//- 		.tabs-inner__btn.swiper-slide
+										//- 			h2 SWS-4000
+										
+										.tabs-inner__caption
+											.tabs-inner__btn.active
+												h2 SWS-6000
+											.tabs-inner__btn
+												h2 SWS-6000A
+											.tabs-inner__btn
+												h2 SWS-4000
+										.tabs-inner__content.active
+											p Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti alias molestiae sapiente. Nostrum dignissimos alias velit ipsa? Iusto minus aut veniam,
+										.tabs-inner__content
+											p Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti alias molestiae sapiente. Nosam, quos quis cumque voluptatum aliquid assumenda veritatis.
+										.tabs-inner__content
+											p Lorem ipsum consectetur adipisicing elit. Corrupti alias molestiae sapiente. Nostam, quos quis cumque voluptatum aliquid assumenda veritatis.
+
 						+e.body
 							h2 Технические характеристики
 							.row

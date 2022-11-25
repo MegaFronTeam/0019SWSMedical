@@ -302,6 +302,7 @@ const $ = jQuery;
 function eventHandler() {
 	JSCCommon.modalCall();
 	JSCCommon.tabscostume('tabs');
+	JSCCommon.tabscostume('tabs-inner');
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask();
 	// JSCCommon.sendForm();
@@ -382,9 +383,9 @@ function eventHandler() {
 		freeModeMomentum: true,
 
 	});
-	const TabsSlider = new Swiper(".tabs__slider--js", {
-		slidesPerView: 'auto',
-	});
+	// const TabsSlider = new Swiper(".tabs-inner__slider--js", {
+	// 	slidesPerView: 'auto',
+	// });
 
 	// modal window
 

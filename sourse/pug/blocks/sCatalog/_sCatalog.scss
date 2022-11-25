@@ -16,6 +16,22 @@
 		height: auto;
 	}
 
+	.tabs {
+		&__caption {
+			@include roww(20px, m);
+			display: inline-flex;
+			h4 {
+				margin-bottom: 0;
+				font-weight: 300;
+			}
+		}
+		&__btn {
+
+		}
+		&__content {
+		}
+	}
+
 	@include media-breakpoint-up(xl) {
 	}
 	@include media-breakpoint-up(lg) {
@@ -33,6 +49,7 @@
 } // end.sCatalog
 
 .catalog-card {
+	
 	&__body {
 		h2 {
 			margin-bottom: var(--sTPB);
@@ -144,12 +161,12 @@
 		}
 	}
 
-	.tabs {
-		&__caption {
-		}
-		&__btn {
-		}
+	
+	.tabs-inner {
 		&__content {
+			&:not(.active) {
+				display: none;
+			}
 		}
 	}
 }
