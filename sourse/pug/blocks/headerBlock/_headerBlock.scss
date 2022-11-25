@@ -20,7 +20,7 @@
 	// @include media-breakpoint-up(xxl) {
 	// 	padding-top: rem(100);
 	// }
-	&::after {
+	&::before {
 		@include mt;
 		content: "";
 		position: absolute;
@@ -28,20 +28,26 @@
 		top: 0;
 		width: 100%;
 		height: 100%;
+		// background-color: #000;
 		background-image: linear-gradient(0deg, rgba(212, 234, 255, 0.73), rgba(212, 234, 255, 0.73));
 		pointer-events: none;
-		z-index: -1;
+		// z-index: -1;
 	}
 	.floating-imgs {
+		z-index: 1;
 		img {
 			opacity: 0.32;
 			&:first-child {
-				top: 3%;
-				right: -4%;
+				height: 616px;
+				right: 3%;
+				top: 2%;
+				width: 836px;
 			}
 			&:nth-child(2) {
-				top: 0;
-				right: -7%;
+				height: 589px;
+				right: 0;
+				top: 2%;
+				width: 803px;
 			}
 		}
 	}

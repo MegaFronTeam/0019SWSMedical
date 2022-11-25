@@ -98,7 +98,7 @@
 		// left: 0;
 		right: 0;
 		background-color: $body-bg;
-		border-left: 2px solid #99CCFF;
+		border-left: 2px solid #99ccff;
 		&:not(.active) {
 			transform: translate3d(120%, 0, 0);
 			--opacity: 0;
@@ -157,6 +157,24 @@
 				// &:not(:hover) {
 				// 	color: #63a9ff;
 				// }
+			}
+		}
+		.floating-imgs {
+			overflow: hidden;
+			opacity: 0.5;
+			img {
+				&:first-child {
+					height: 800px;
+					left: 0;
+					top: 39%;
+					width: 500px;
+				}
+				&:nth-child(2) {
+					height: 1179px;
+					left: 0;
+					top: -20%;
+					width: 449px;
+				}
 			}
 		}
 	}
