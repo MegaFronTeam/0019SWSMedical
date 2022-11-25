@@ -15,7 +15,7 @@ mixin sCatalog(data)
 			.tabs
 				.tabs__caption
 					+e.btn.tabs__btn.active
-						h4 SWS-6000
+						h4 SWS-600
 					+e.btn.tabs__btn
 						h4 SWS-6000A
 					+e.btn.tabs__btn
@@ -25,10 +25,10 @@ mixin sCatalog(data)
 					+b.catalog-card
 						+e.head
 							.row
-								+e.col.col-auto
+								+e.col-main.col-lg-auto
 									h3 Аппарат для гемодиализа
 									h2 SWS-6000
-								.col
+								.col-lg
 									.tabs-inner
 										//- .tabs-inner__slider.tabs-inner__slider--js.swiper
 										//- 	.tabs-inner__caption.swiper-wrapper
@@ -38,20 +38,46 @@ mixin sCatalog(data)
 										//- 			h2 SWS-6000A
 										//- 		.tabs-inner__btn.swiper-slide
 										//- 			h2 SWS-4000
-										
-										.tabs-inner__caption
-											.tabs-inner__btn.active
-												h2 SWS-6000
-											.tabs-inner__btn
-												h2 SWS-6000A
-											.tabs-inner__btn
-												h2 SWS-4000
-										.tabs-inner__content.active
-											p Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti alias molestiae sapiente. Nostrum dignissimos alias velit ipsa? Iusto minus aut veniam,
-										.tabs-inner__content
-											p Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti alias molestiae sapiente. Nosam, quos quis cumque voluptatum aliquid assumenda veritatis.
-										.tabs-inner__content
-											p Lorem ipsum consectetur adipisicing elit. Corrupti alias molestiae sapiente. Nostam, quos quis cumque voluptatum aliquid assumenda veritatis.
+										.row
+											.col.order-lg-last
+												.tabs-inner__caption
+													.tabs-inner__btn.active
+														span Безопасность лечения гарантирована
+													.tabs-inner__btn
+														span Безопасное самотестирование
+													.tabs-inner__btn
+														span Экономия затрат
+													.tabs-inner__btn
+														span Удобный дизайн управления
+													.tabs-inner__btn
+														span Простота обслуживания
+													.tabs-inner__btn
+														span Многофункциональность
+													.tabs-inner__btn
+														span Индивидуальные профили лечения
+													.tabs-inner__btn
+														span Мониторинг объема крови
+													.tabs-inner__btn
+														span Мониторинг Kt/V
+													.tabs-inner__btn
+														span Мониторинг температуры крови
+													.tabs-inner__btn
+														span Держатель бикарбонатного картриджа
+
+											.col
+												.tabs-inner__content.active
+													p Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti alias molestiae sapiente. Nostrum dignissimos alias velit ipsa? Iusto minus aut veniam,
+												.tabs-inner__content
+												.tabs-inner__content
+												.tabs-inner__content
+												.tabs-inner__content
+												.tabs-inner__content
+												.tabs-inner__content
+												.tabs-inner__content
+												.tabs-inner__content
+												.tabs-inner__content
+												.tabs-inner__content
+													
 
 						+e.body
 							h2 Технические характеристики
