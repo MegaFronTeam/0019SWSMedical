@@ -4,6 +4,28 @@
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
 	padding-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--sPB) * 1.4);
+	&> .container {
+		position: relative;
+		z-index: 3;
+	}
+	.floating-imgs {
+		z-index: 2;
+		img {
+			&:first-child {
+				width: 722px;
+				height: 544px;
+				right: 0;
+				bottom: 0;
+			}
+			&:nth-child(2) {
+				width: 826px;
+				height: 642px;
+				right: 0;
+				bottom: 0;
+			}
+		}
+	}
+
 	&__row {
 		--bs-gutter-y: var(--bs-gutter-x);
 		@include media-breakpoint-up(xl) {
@@ -149,7 +171,7 @@
 		margin-right: auto;
 		margin-top: calc(var(--sPB) * 1.4);
 		@include media-breakpoint-up(xl) {
-		margin-top: calc(var(--sPB) * 2);
+			margin-top: calc(var(--sPB) * 2);
 		}
 		@include media-breakpoint-up(xxl) {
 			margin-top: rem(120);

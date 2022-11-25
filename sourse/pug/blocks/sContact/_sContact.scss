@@ -6,29 +6,23 @@
 
 	position: relative;
 	.floating-imgs {
+		z-index: 2;
 		img {
 			&:first-child {
+				width: 148px;
+				height: 114px;
 				top: 5%;
 				right: 44.3%;
 				@include media-breakpoint-up(xl) {
-					right: 44.3%;
-					top: 28.9%;
+					right: 46.3%;
+					top: 16.9%;
 				}
 			}
 			&:nth-child(2) {
-				left: 50%;
-				top: 40%;
-				@include media-breakpoint-up(md) {
-					left: 73.7%;
-					top: 0;
-				}
-				@include media-breakpoint-up(md) {
-					left: 83.7%;
-				}
-				@include media-breakpoint-up(xxl) {
-					left: 94.7%;
-					top: 23.2%;
-				}
+				width: 362px;
+				height: 446px;
+				right: 0;
+				top: 15%;
 			}
 		}
 	}
@@ -44,6 +38,8 @@
 	}
 
 	&__item {
+		position: relative;
+		z-index: 3;
 		@include media-breakpoint-up(xl) {
 			max-width: rem(420);
 		}

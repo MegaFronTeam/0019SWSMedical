@@ -17,6 +17,10 @@
 				left: 0%;
 				top: -39%;
 				width: 449px;
+				// display: none;
+				// @include media-breakpoint-up(md) {
+				// 	display: block;
+				// }
 			}
 			&:nth-child(3) {
 				height: 18px;
@@ -24,7 +28,7 @@
 				top: 99%;
 				width: 267px;
 				display: none;
-				@include media-breakpoint-up(md) {
+				@include media-breakpoint-up(xxl) {
 					display: block;
 				}
 			}

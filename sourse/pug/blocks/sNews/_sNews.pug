@@ -1,6 +1,9 @@
 mixin sNews(data)
 	// start sNews
-	+b.SECTION.sNews.section#sNews&attributes(attributes)
+	+b.SECTION.sNews.section#sNews&attributes(attributes).bg-wrap
+		.floating-imgs
+			+img('img/svg/sNews-bg-1.svg')
+			+img('img/svg/sNews-bg-2.svg')
 		.container
 			+b.section-title
 				h2 Новости

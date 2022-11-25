@@ -161,8 +161,8 @@
 		}
 		.floating-imgs {
 			overflow: hidden;
-			opacity: 0.5;
 			img {
+				opacity: 0.5;
 				&:first-child {
 					height: 800px;
 					left: 0;

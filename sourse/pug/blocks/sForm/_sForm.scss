@@ -5,15 +5,20 @@
 	@include media-breakpoint-up(lg) {
 		--sTPB: #{rem(40)};
 	}
-	position: relative;
+	& > .container {
+		position: relative;
+	}
 	.floating-imgs {
 		img {
 			&:first-child {
-				top: rem(-37);
-				right: 0;
+				right: 3.9%;
+				top: 25%;
+				@include media-breakpoint-up(sm) {
+					top: -25%;
+				}
 				@include media-breakpoint-up(xxl) {
+					top: -15%;
 					// right: rem(30);
-					right: 2.2%;
 				}
 			}
 		}
