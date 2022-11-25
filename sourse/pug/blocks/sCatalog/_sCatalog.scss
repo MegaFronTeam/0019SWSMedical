@@ -19,13 +19,14 @@
 	.tabs {
 		&__caption {
 			@include roww(20px, m);
-			display: inline-flex;
-			flex-wrap: wrap;
+			// display: inline-flex;
+			// flex-wrap: wrap;
 		}
 		&__btn {
 			position: relative;
 			color: $primary;
 			margin-bottom: 6px;
+			width: auto;
 			&:hover, &.active {
 				color: $red;
 			}
@@ -117,7 +118,7 @@
 			width: 42.667%;
 		}
 	}
-	&__item {
+	&__tech-item {
 		margin-bottom: var(--sTPB);
 		@include media-breakpoint-down(md) {
 			font-size: rem(15);
