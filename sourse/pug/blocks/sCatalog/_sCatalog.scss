@@ -110,8 +110,9 @@
 } // end.sCatalog
 
 .catalog-card {
+	--paddingSize: #{rem(10)};
 	&__head {
-		padding-bottom: var(--sTPB);
+		padding-bottom: calc(var(--sTPB) + var(--paddingSize) * 2);
 		& > .row {
 			--bs-gutter-x: #{rem(30)};
 			@include media-breakpoint-up(xl) {
@@ -149,15 +150,25 @@
 		}
 	}
 	&__item {
-		--paddingSize: #{rem(10)};
+		
 		position: relative;
 		border: 1px solid #99ccff;
 		border-radius: $border-radius;
 		margin: 0 calc(var(--paddingSize) * 2) calc(var(--paddingSize) * 2) 0;
 		background-color: $white;
-		max-width: 430px;
+		max-width:rem(430);
+		height: 100%;
+		// z-index: 3;
+		min-height: rem(380);
 		@include media-breakpoint-up(md) {
-			max-width: 390px;
+			max-width: rem(390);
+			min-height: rem(440);
+		}
+		@include media-breakpoint-up(xl) {
+			min-height: rem(490);
+		}
+		@include media-breakpoint-up(xxl) {
+			min-height: rem(590);
 		}
 
 		&::before,
@@ -181,19 +192,24 @@
 		}
 	}
 	&__wrap {
-		@include block(390, 590);
-		overflow-x: hidden;
-		overflow-y: auto;
+		overflow: hidden;
 		font-weight: 300;
 		font-size: 14px;
-		// padding: calc(var(--paddingSize) * 3) var(--paddingSize) var(--paddingSize) calc(var(--paddingSize) * 3);
-		& > *,
-		img {
-			position: absolute;
-			left: calc(var(--paddingSize) * 2);
-			top: calc(var(--paddingSize) * 2);
-			width: calc(100% - (var(--paddingSize) * 3));
-			height: calc(100% - (var(--paddingSize) * 3));
+		padding: calc(var(--paddingSize) * 3) var(--paddingSize) var(--paddingSize) calc(var(--paddingSize) * 3);
+		background-color: $white;
+		border-radius: $border-radius;
+		width: 100%;
+		height: 100%;
+		&--img {
+			@include block(390, 590);
+			height: auto;
+			img {
+				position: absolute;
+				left: calc(var(--paddingSize) * 2);
+				top: calc(var(--paddingSize) * 2);
+				width: calc(100% - (var(--paddingSize) * 3));
+				height: calc(100% - (var(--paddingSize) * 3));
+			}
 		}
 	}
 	&__tech-item {
@@ -311,6 +327,7 @@
 			}
 		}
 		&__content {
+			height: 100%;
 			&:not(.active) {
 				display: none;
 			}
@@ -326,9 +343,9 @@
 			@include media-breakpoint-up(md) {
 				margin-bottom: rem(17);
 			}
-			@include media-breakpoint-up(lg) {
-				margin-bottom: rem(15);
-			}
+			// @include media-breakpoint-up(lg) {
+			// 	margin-bottom: rem(15);
+			// }
 			@include media-breakpoint-up(xl) {
 				margin-bottom: rem(21);
 			}
