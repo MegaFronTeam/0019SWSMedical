@@ -12,6 +12,41 @@
 	// &__col {
 	// }
 
+	.floating-imgs {
+		img {
+			&:first-child {
+				width: 500px;
+				height: 587px;
+				left: -0.5%;
+				top: 197.297px;
+			}
+			&:nth-child(2) {
+				width: 838px;
+				height: 704px;
+				left: -0.3%;
+				top: 105.016px;
+			}
+			&:nth-child(3) {
+				width: 554px;
+				height: 712px;
+				left: -0.3%;
+				top: 146.375px;
+			}
+			&:nth-child(4) {
+				width: 114px;
+				height: 136px;
+				right: 6%;
+				top: 111.375px;
+			}
+			&:nth-child(5) {
+				width: 298px;
+				height: 216px;
+				left: 38.2%;
+				top: 820.141px;
+			}
+		}
+	}
+
 	&__slide {
 		height: auto;
 	}
@@ -112,7 +147,7 @@
 .catalog-card {
 	--paddingSize: #{rem(10)};
 	&__head {
-		padding-bottom: calc(var(--sTPB) + var(--paddingSize) * 2);
+		padding-bottom: var(--sTPB);
 		& > .row {
 			--bs-gutter-x: #{rem(30)};
 			@include media-breakpoint-up(xl) {
@@ -124,6 +159,9 @@
 		margin-bottom: var(--sTPB);
 		@include media-breakpoint-up(lg) {
 			text-align: right;
+		}
+		h3 {
+			margin-bottom: rem(13);
 		}
 	}
 	&__body {
@@ -138,7 +176,7 @@
 	&__col {
 		width: 100%;
 		@include media-breakpoint-up(sm) {
-			width: 42.667%;
+			width: 41.067%;
 		}
 	}
 	&__col-main {
@@ -150,14 +188,13 @@
 		}
 	}
 	&__item {
-		
 		position: relative;
 		border: 1px solid #99ccff;
 		border-radius: $border-radius;
 		margin: 0 calc(var(--paddingSize) * 2) calc(var(--paddingSize) * 2) 0;
 		background-color: $white;
-		max-width:rem(430);
-		height: 100%;
+		max-width: rem(430);
+		height: calc(100% - var(--paddingSize) * 2);
 		// z-index: 3;
 		min-height: rem(380);
 		@include media-breakpoint-up(md) {
@@ -202,7 +239,7 @@
 		height: 100%;
 		&--img {
 			@include block(390, 590);
-			height: auto;
+			// height: auto;
 			img {
 				position: absolute;
 				left: calc(var(--paddingSize) * 2);
@@ -246,11 +283,14 @@
 			// 	margin-left: 0;
 			// }
 			@include media-breakpoint-up(xl) {
-				margin-left: rem(20);
+				margin-left: rem(30);
 			}
 			.row {
 				align-items: center;
 				--bs-gutter-y: caLc(var(--bs-gutter-x) / 2);
+				@include media-breakpoint-up(xl) {
+					--bs-gutter-x: #{rem(30)};
+				}
 			}
 			small {
 				display: block;
@@ -262,6 +302,7 @@
 			padding: rem(15) rem(30) rem(15) rem(15);
 			position: relative;
 			margin-bottom: rem(9);
+			line-height: 1.38;
 			@include media-breakpoint-up(xl) {
 				padding: rem(20) rem(40) rem(20) rem(20);
 			}
@@ -283,7 +324,8 @@
 			.row {
 				align-items: center;
 				--bs-gutter-y: caLc(var(--bs-gutter-x) / 2);
-				@include media-breakpoint-down(xl) {
+				--bs-gutter-x: #{rem(15)};
+				@include media-breakpoint-up(xl) {
 					--bs-gutter-x: #{rem(15)};
 				}
 			}
@@ -333,6 +375,19 @@
 			}
 			ul {
 				list-style: none;
+				li {
+					margin-bottom: 1rem;
+					img {
+						max-width: 100%;
+						height: auto;
+						margin-bottom: 1rem;
+						&.float {
+							width: 31.6%;
+							float: left;
+							margin-right: 1rem;
+						}
+					}
+				}
 			}
 		}
 		&__btn {
