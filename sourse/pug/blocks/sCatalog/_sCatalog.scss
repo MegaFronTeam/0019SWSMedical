@@ -63,8 +63,8 @@
 		}
 		&__slider {
 			overflow: visible;
-			z-index: 1000;
 			@include media-breakpoint-up(sm) {
+				z-index: 1000;
 				margin: 0;
 				margin-right: 65px;
 			}
