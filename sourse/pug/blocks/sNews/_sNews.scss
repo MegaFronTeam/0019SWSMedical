@@ -18,22 +18,22 @@
 		img {
 			&:first-child {
 				height: 83px;
-				left: 24%;
-				top: 53%;
+				left: 24% !important;
+				top: 53% !important;
 				width: 260px;
-				display: none;
+				display: none !important;
 				@include media-breakpoint-up(xxl) {
-					display: block;
+					display: block !important;
 				}
 			}
 			&:nth-child(2) {
 				height: 104px;
-				left: 37%;
-				top: 60%;
+				left: 37% !important;
+				top: 60% !important;
 				width: 254px;
-				display: none;
+				display: none !important;
 				@include media-breakpoint-up(xxl) {
-					display: block;
+					display: block !important;
 				}
 			}
 		}

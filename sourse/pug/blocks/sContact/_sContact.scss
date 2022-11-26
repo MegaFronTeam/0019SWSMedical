@@ -11,18 +11,21 @@
 			&:first-child {
 				width: 148px;
 				height: 114px;
-				top: 5%;
-				right: 44.3%;
+				top: 5% !important;
+				right: 44.3% !important;
+				left: auto !important;
 				@include media-breakpoint-up(xl) {
-					right: 46.3%;
-					top: 16.9%;
+					right: 46.3% !important;
+					top: 16.9% !important;
+					left: auto !important;
 				}
 			}
 			&:nth-child(2) {
 				width: 362px;
 				height: 446px;
-				right: 0;
-				top: 15%;
+				right: 0 !important;
+				top: 15% !important;
+				left: auto !important;
 			}
 		}
 	}

@@ -15,34 +15,35 @@
 	.floating-imgs {
 		img {
 			&:first-child {
-				width: 500px;
-				height: 587px;
-				left: -0.5%;
-				top: 197.297px;
+				width: 554px;
+				height: 712px;
+				left: -0.3% !important;
+				top: 146.375px !important;
 			}
 			&:nth-child(2) {
 				width: 838px;
 				height: 704px;
-				left: -0.3%;
-				top: 105.016px;
+				left: -0.3% !important;
+				top: 105.016px !important;
 			}
 			&:nth-child(3) {
-				width: 554px;
-				height: 712px;
-				left: -0.3%;
-				top: 146.375px;
+				width: 500px;
+				height: 587px;
+				left: -0.5% !important;
+				top: 197.297px !important;
 			}
 			&:nth-child(4) {
 				width: 114px;
 				height: 136px;
-				right: 6%;
-				top: 111.375px;
+				right: 6% !important;
+				top: 111.375px !important;
+				left: auto !important;
 			}
 			&:nth-child(5) {
 				width: 298px;
 				height: 216px;
-				left: 38.2%;
-				top: 820.141px;
+				left: 38.2% !important;
+				top: 820.141px !important;
 			}
 		}
 	}
@@ -381,10 +382,12 @@
 						max-width: 100%;
 						height: auto;
 						margin-bottom: 1rem;
+						border: 1px solid #99ccff;
+						border-radius: 9px;
 						&.float {
 							width: 31.6%;
 							float: left;
-							margin-right: 1rem;
+							margin-right: 1.1rem;
 						}
 					}
 				}

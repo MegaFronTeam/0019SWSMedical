@@ -1,9 +1,9 @@
 mixin sContact()
 	// start sContact
 	+b.SECTION.sContact.section#sContact&attributes(attributes)
-		.floating-imgs
-			+img('img/svg/sContact-bg-1.svg')
-			+img('img/svg/sContact-bg-2.svg')
+		.floating-imgs#sContactScene
+			img(src='img/svg/sContact-bg-1.svg' alt='' loading='lazy' data-depth="0.2")
+			img(src='img/svg/sContact-bg-2.svg' alt='' loading='lazy' data-depth="0.1")
 		.container
 			+b.section-title
 				h2 Контакты

@@ -2,8 +2,8 @@ mixin sForm()
 	// start sForm
 	+b.SECTION.sForm.section#sForm&attributes(attributes)
 		.container
-			.floating-imgs
-				+img('img/svg/sForm-bg-1.svg')
+			.floating-imgs#sFormScene
+				img(src='img/svg/sForm-bg-1.svg' alt='' loading='lazy' data-depth="0.4")
 			+b.section-title
 				h2 Остались вопросы?
 			+form-wrap

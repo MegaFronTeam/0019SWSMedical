@@ -39,14 +39,16 @@
 			opacity: 0.32;
 			&:first-child {
 				height: 616px;
-				right: 3%;
-				top: 2%;
+				right: 3% !important;
+				top: 2% !important;
+				left: auto !important;
 				width: 836px;
 			}
 			&:nth-child(2) {
 				height: 589px;
-				right: 0;
-				top: 2%;
+				right: 0 !important;
+				top: 2% !important;
+				left: auto !important;
 				width: 803px;
 			}
 		}

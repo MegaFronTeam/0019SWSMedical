@@ -11,12 +11,12 @@ mixin catalog-card-row(b, p)
 mixin sCatalog(data)
 	// start sCatalog
 	+b.sCatalog.section&attributes(attributes).bg-wrap
-		.floating-imgs
-			+img('img/svg/sCatalog-bg-1.svg')
-			+img('img/svg/sCatalog-bg-2.svg')
-			+img('img/svg/sCatalog-bg-3.svg')
-			+img('img/svg/sCatalog-bg-4.svg')
-			+img('img/svg/sCatalog-bg-5.svg')
+		.floating-imgs#sCatalogScene
+			img(src='img/svg/sCatalog-bg-3.svg' alt='' loading='lazy' data-depth="0.3")
+			img(src='img/svg/sCatalog-bg-2.svg' alt='' loading='lazy' )
+			img(src='img/svg/sCatalog-bg-1.svg' alt='' loading='lazy' data-depth="0.4")
+			img(src='img/svg/sCatalog-bg-4.svg' alt='' loading='lazy' data-depth="0.2")
+			img(src='img/svg/sCatalog-bg-5.svg' alt='' loading='lazy' data-depth="0.1")
 		.container
 			.tabs
 				.tabs__slider.tabs__slider--js.swiper
@@ -218,7 +218,7 @@ mixin sCatalog(data)
 												+e.link(href="#") 
 													span Medical-m
 													+icon('box-arrow-right')
-				.tabs__content.active
+				.tabs__content
 					+b.catalog-card
 						+e.head
 							.row
@@ -408,7 +408,7 @@ mixin sCatalog(data)
 												+e.link(href="#") 
 													span Medical-m
 													+icon('box-arrow-right')
-				.tabs__content.active
+				.tabs__content
 					+b.catalog-card
 						+e.head
 							.row

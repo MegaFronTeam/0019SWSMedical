@@ -11,13 +11,14 @@
 	.floating-imgs {
 		img {
 			&:first-child {
-				right: 3.9%;
-				top: 25%;
+				right: 3.9% !important;
+				top: 25% !important;
+				left: auto !important;
 				@include media-breakpoint-up(sm) {
-					top: -25%;
+					top: -25% !important;
 				}
 				@include media-breakpoint-up(xxl) {
-					top: -15%;
+					top: -15% !important;
 					// right: rem(30);
 				}
 			}

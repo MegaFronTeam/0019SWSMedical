@@ -385,11 +385,49 @@ function eventHandler() {
 	});
 	const TabsSlider = new Swiper(".tabs__slider--js", {
 		slidesPerView: 'auto',
+		slideToClickedSlide: true,
+		freeMode: true,
 	});
 	const TabsSlider2 = new Swiper(".tabs-inner__slider--js", {
 		slidesPerView: 'auto',
 		slideToClickedSlide: true,
 		freeMode: true,
+	});
+	var headerBlockScene = document.getElementById('headerBlockScene');
+	var parallaxInstance = new Parallax(headerBlockScene, {
+		relativeInput: true,
+		// hoverOnly: true,
+		originY: 0
+	});
+	var sCatalogScene = document.getElementById('sCatalogScene');
+	var parallaxInstance = new Parallax(sCatalogScene, {
+		relativeInput: true,
+		// hoverOnly: true,
+		originY: 0
+	});
+	var sServicesScene = document.getElementById('sServicesScene');
+	var parallaxInstance = new Parallax(sServicesScene, {
+		relativeInput: true,
+		// hoverOnly: true,
+		originY: 0
+	});
+	var sNewsScene = document.getElementById('sNewsScene');
+	var parallaxInstance = new Parallax(sNewsScene, {
+		relativeInput: true,
+		// hoverOnly: true,
+		originY: 0
+	});
+	var sFormScene = document.getElementById('sFormScene');
+	var parallaxInstance = new Parallax(sFormScene, {
+		relativeInput: true,
+		// hoverOnly: true,
+		originY: 0
+	});
+	var sContactScene = document.getElementById('sContactScene');
+	var parallaxInstance = new Parallax(sContactScene, {
+		relativeInput: true,
+		// hoverOnly: true,
+		originY: 0
 	});
 
 	// modal window
