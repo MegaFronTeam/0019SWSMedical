@@ -10,7 +10,7 @@ mixin catalog-card-row(b, p)
 
 mixin sCatalog(data)
 	// start sCatalog
-	+b.sCatalog.section&attributes(attributes).bg-wrap
+	+b.sCatalog.section&attributes(attributes)
 		.floating-imgs#sCatalogScene
 			img(src='img/svg/sCatalog-bg-3.svg' alt='' loading='lazy' data-depth="0.3")
 			img(src='img/svg/sCatalog-bg-2.svg' alt='' loading='lazy' )
@@ -19,14 +19,15 @@ mixin sCatalog(data)
 			img(src='img/svg/sCatalog-bg-5.svg' alt='' loading='lazy' data-depth="0.1")
 		.container
 			.tabs
-				.tabs__slider.tabs__slider--js.swiper
-					.tabs__caption.swiper-wrapper
-						.tabs__btn.swiper-slide.active
-							h4 SWS-6000
-						.tabs__btn.swiper-slide
-							h4 SWS-6000A
-						.tabs__btn.swiper-slide
-							h4 SWS-4000
+				.tabs__slider-wrapper
+					.tabs__slider.tabs__slider--js.swiper
+						.tabs__caption.swiper-wrapper
+							.tabs__btn.swiper-slide.active
+								h4 SWS-6000
+							.tabs__btn.swiper-slide
+								h4 SWS-6000A
+							.tabs__btn.swiper-slide
+								h4 SWS-4000
 				
 				.tabs__content.active
 					+b.catalog-card

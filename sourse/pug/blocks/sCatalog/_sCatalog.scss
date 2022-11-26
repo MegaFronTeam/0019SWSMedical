@@ -3,6 +3,7 @@
 	// --sPT: #{rem()};
 	// --sPB: #{rem()};
 	// --sTPB: #{rem()};
+	position: relative;
 	&__row {
 		// --bs-gutter-x: #{rem()};
 		--bs-gutter-y: var(--bs-gutter-x);
@@ -48,19 +49,42 @@
 		}
 	}
 
-	&__slide {
-		height: auto;
-	}
+	// &__slide {
+	// 	height: auto;
+	// }
 
 	.tabs {
-		&__slider {
+		&__slider-wrapper {
 			margin-bottom: calc(var(--sTPB) * 1.28);
+			@include media-breakpoint-up(sm) {
+				display: flex;
+				justify-content: flex-end;
+			}
+		}
+		&__slider {
 			overflow: visible;
+			z-index: 1000;
+			@include media-breakpoint-up(sm) {
+				margin: 0;
+				margin-right: 65px;
+			}
+			@include media-breakpoint-up(md) {
+				margin-right: 85px;
+			}
+			@include media-breakpoint-up(xl) {
+				margin-right: 180px;
+			}
+			@include media-breakpoint-up(xxl) {
+				margin-right: 268px;
+			}
 		}
 		&__caption {
 			@include roww(20px, m);
 			// display: inline-flex;
 			// flex-wrap: wrap;
+			@include media-breakpoint-up(sm) {
+				transform: none !important;
+			}
 		}
 		&__btn {
 			@include mt;
@@ -68,7 +92,8 @@
 			color: $primary;
 			margin-bottom: 6px;
 			width: auto;
-
+			height: auto;
+			
 			&.active {
 				color: $red;
 			}
@@ -99,8 +124,15 @@
 				font-weight: 300;
 				padding: 0 12px 6px;
 				color: inherit;
-				min-width: 128px;
 				text-align: center;
+				font-size: 14px;
+				@include media-breakpoint-up(md) {
+					font-size: 17px;
+				}
+				@include media-breakpoint-up(xxl) {
+					min-width: 128px;
+					font-size: $h4-font-size;
+				}
 				&::after {
 					content: "";
 					width: 12px;

@@ -387,6 +387,8 @@ function eventHandler() {
 		slidesPerView: 'auto',
 		slideToClickedSlide: true,
 		freeMode: true,
+		// spaceBetween: 20,
+		watchOverflow: true
 	});
 	const TabsSlider2 = new Swiper(".tabs-inner__slider--js", {
 		slidesPerView: 'auto',
@@ -429,8 +431,15 @@ function eventHandler() {
 		// hoverOnly: true,
 		originY: 0
 	});
-
-	// modal window
+	var StickyTabs = new hcSticky('.sCatalog .tabs__slider', {
+		mobileFirst: true,
+		responsive: {
+			576: {
+				stickTo: '.sCatalog .tabs',
+				top: 15,
+			}
+		}
+	});
 
 };
 if (document.readyState !== 'loading') {
