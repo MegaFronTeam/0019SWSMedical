@@ -4,7 +4,7 @@ mixin footer()
 			img(src='img/svg/footer-bg-1.svg' alt='' loading='lazy' data-depth="0.15")
 			img(src='img/svg/footer-bg-2.svg' alt='' loading='lazy' data-depth="0.07")
 		.container
-			+e.row.row
+			+e.row.row(data-aos="fade-up" data-aos-once="true")
 				.col-auto
 					+e.logo(href="/")
 						+img('img/svg/logo.svg')
@@ -19,7 +19,7 @@ mixin footer()
 					+b.nav-contact
 						+e.tel(href="tel:+74952592406") +7 (495) 259-24-06
 						+e.schedule пн-пт: с&nbsp;09:00 до&nbsp;18:00
-			+e.wrapper
+			+e.wrapper(data-aos="fade-up" data-aos-duration="1000" data-aos-once="true")
 				.row
 					.col-auto
 						+e.item(href=`#` data-src="legalInfo" data-fancybox="modal") Юридическая информация

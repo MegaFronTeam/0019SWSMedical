@@ -4,9 +4,9 @@ mixin sForm()
 		.container
 			.floating-imgs#sFormScene
 				img(src='img/svg/sForm-bg-1.svg' alt='' loading='lazy' data-depth="0.8")
-			+b.section-title
+			+b.section-title(data-aos="fade-up" data-aos-once="true")
 				h2 Остались вопросы?
-			+form-wrap
+			+form-wrap(data-aos="fade-up" data-aos-duration="1000" data-aos-once="true")
 				+e.row.row
 					.col-lg-8
 						.row

@@ -5,9 +5,9 @@ mixin sContact()
 			img(src='img/svg/sContact-bg-1.svg' alt='' loading='lazy' data-depth="0.6")
 			img(src='img/svg/sContact-bg-2.svg' alt='' loading='lazy' data-depth="0.2")
 		.container
-			+b.section-title
+			+b.section-title(data-aos="fade-up" data-aos-once="true")
 				h2 Контакты
-			+e.wrapper
+			+e.wrapper(data-aos="fade-up" data-aos-duration="1000" data-aos-once="true")
 				+e.row.row
 					mixin item(a, h, i, ...items)
 						.col-md-6.col-xl-auto

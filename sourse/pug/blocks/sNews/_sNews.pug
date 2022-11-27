@@ -5,9 +5,9 @@ mixin sNews(data)
 			img(src='img/svg/sNews-bg-1.svg' alt='' loading='lazy' data-depth="0.8")
 			img(src='img/svg/sNews-bg-2.svg' alt='' loading='lazy' data-depth="0.4")
 		.container
-			+b.section-title
+			+b.section-title(data-aos="fade-up" data-aos-once="true")
 				h2 Новости
-			+e.wrapper
+			+e.wrapper(data-aos="fade-up" data-aos-duration="1000" data-aos-once="true")
 				+e.item
 					+e.row.row
 						+e.col.col-md-7.col-lg-auto.order-md-last

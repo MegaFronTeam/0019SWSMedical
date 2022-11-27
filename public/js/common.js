@@ -450,7 +450,7 @@ function eventHandler() {
 			
 		}
 	});
-
+	AOS.init();
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

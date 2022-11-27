@@ -7,9 +7,9 @@ mixin sServices(data)
 			img(src='img/svg/sServices-bg-3.svg' alt='' loading='lazy' data-depth="0.5")
 			img(src='img/svg/sServices-bg-4.svg' alt='' loading='lazy' data-depth="0.8")
 		.container
-			+b.section-title
+			+b.section-title(data-aos="fade-up" data-aos-once="true")
 				h2 Профессиональные технические услуги
-			+e.wrapper
+			+e.wrapper(data-aos="fade-up" data-aos-duration="1000" data-aos-once="true")
 				+e.row.row
 					.col-md-6.col-xl-auto
 						+e.item
