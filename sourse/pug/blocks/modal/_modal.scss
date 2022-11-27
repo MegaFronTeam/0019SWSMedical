@@ -13,9 +13,11 @@
 	position: relative;
 	width: rem(1300);
 	// min-height: 100%;
-	padding: 40px;
+	padding: rem(40) 5%;
 	border-radius: $border-radius-sm;
-	
+	@include media-breakpoint-up(sm) {
+		padding: rem(40) 3%;
+	}
 	.modal-content {
 		// max-width: 485px;
 		// padding-right: 40px 15px;
@@ -28,19 +30,53 @@
 	}
 	h2 {
 		text-align: center;
-		margin-bottom: 0.5em;
+		margin-bottom: 0.7em;
 	}
 	h4 {
 		margin-bottom: 0.5em;
 	}
 	ul {
 		list-style: none;
-		padding-left: 1em;
-		&:last-child {
-			margin-bottom: 0;
+		@include media-breakpoint-up(sm) {
+			padding-left: 1em;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			li {
+				margin-top: 7px;
+			}
 		}
-		li {
-			margin-top: 7px;
+	}
+	&--legal {
+		width: rem(800);
+
+		ul {
+			@include media-breakpoint-up(sm) {
+				padding-left: 0;
+			}
+			li {
+				@include media-breakpoint-up(sm) {
+					margin-top: 0;
+				}
+			}
+		}
+		.modal-win__item {
+			padding-bottom: 0.5em;
+			margin-bottom: 0.5em;
+			border-bottom: 1px solid rgba($color: $primary, $alpha: .6);
+			&:last-child {
+				margin-bottom: 0;
+				border: none;
+			}
+		}
+		.modal-win__col {
+			& > * {
+				display: block;
+			}
+			@include media-breakpoint-up(sm) {
+				text-align: right;
+				width: 35%;
+			}
 		}
 	}
 }
@@ -205,6 +241,6 @@ a {
 
 .fancybox__content > .carousel__button.is-close {
 	top: 7px;
-	right:7px;
+	right: 7px;
 	color: $body-color;
 }
