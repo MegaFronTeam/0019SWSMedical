@@ -10,10 +10,10 @@ mixin catalog-card-row(b, p)
 
 mixin sCatalog(data)
 	// start sCatalog
-	+b.sCatalog.section&attributes(attributes)
+	+b.sCatalog#sCatalog.section&attributes(attributes)
 		.floating-imgs#sCatalogScene
 			img(src='img/svg/sCatalog-bg-3.svg' alt='' loading='lazy' data-depth="0.4")
-			img(src='img/svg/sCatalog-bg-2.svg' alt='' loading='lazy' data-depth="0.03")
+			img(src='img/svg/sCatalog-bg-2.svg' alt='' loading='lazy' data-depth="0.07")
 			img(src='img/svg/sCatalog-bg-1.svg' alt='' loading='lazy' data-depth="0.8")
 			img(src='img/svg/sCatalog-bg-4.svg' alt='' loading='lazy' data-depth="0.6")
 			img(src='img/svg/sCatalog-bg-5.svg' alt='' loading='lazy' data-depth="0.3")

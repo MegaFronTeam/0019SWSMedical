@@ -2,6 +2,7 @@
 mixin mnu()
 	nav
 		ul.menu(itemscope itemtype="http://schema.org/SiteNavigationElement")
+			li.menu-item.active(itemprop="item" ): a(href= "#headerBlock" itemprop="url") O&nbsp;нас
 			each link in nav
 				li.menu-item(itemprop="item" ): a(href= link.url itemprop="url")= link.name
 				if link.subnav

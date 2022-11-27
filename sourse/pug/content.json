@@ -1,20 +1,16 @@
 {
 	"nav": [
 		{
-			"name": "О нас",
-			"url": "#"
-		},
-		{
 			"name": "Аппараты",
-			"url": "#"
+			"url": "#sCatalog"
 		},
 		{
 			"name": "Новости",
-			"url": "#"
+			"url": "#sNews"
 		},
 		{
 			"name": "Контакты",
-			"url": "#"
+			"url": "#sContact"
 		}
 	],
 	"social": [

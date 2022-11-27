@@ -385,9 +385,9 @@ function eventHandler() {
 	});
 	const TabsSlider = new Swiper(".tabs__slider--js", {
 		slidesPerView: 'auto',
-		slideToClickedSlide: true,
+		// slideToClickedSlide: true,
 		freeMode: true,
-		// spaceBetween: 20,
+		spaceBetween: 20,
 		watchOverflow: true
 	});
 	const TabsSlider2 = new Swiper(".tabs-inner__slider--js", {
@@ -442,8 +442,12 @@ function eventHandler() {
 		responsive: {
 			576: {
 				stickTo: '.sCatalog .tabs',
-				top: 15,
-			}
+				top: 17,
+			},
+			1200: {
+				top: 20,
+			},
+			
 		}
 	});
 
