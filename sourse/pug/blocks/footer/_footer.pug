@@ -22,9 +22,9 @@ mixin footer()
 			+e.wrapper
 				.row
 					.col-auto
-						+e.item(href="#") Юридическая информация
+						+e.item(href=`#` data-src="legalInfo" data-fancybox="modal").link-modal-js Юридическая информация
 					.col-auto
-						+e.item(href="#") Политика конфиденциальности
+						+e.item(href=`#` data-src="privacyPolicy" data-fancybox="modal").link-modal-js Политика конфиденциальности
 					.col-auto
 						+e.item © Все права защищены. #[span.currentYear]
 					.col-auto
