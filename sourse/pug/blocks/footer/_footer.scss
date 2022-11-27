@@ -108,14 +108,17 @@
 		flex-wrap: wrap;
 		@include media-breakpoint-up(sm) {
 			text-align: center;
-			@include roww(20px);
+			@include roww(40px);
 			padding-bottom: 0;
 			flex-wrap: nowrap;
-			// margin: 0;
+			margin: 0;
+		}
+		@include media-breakpoint-up(lg) {
+			--bs-gutter-x: 34px;
 		}
 		@include media-breakpoint-down(sm) {
-			@include roww(10px, m);
-			margin-top: calc(-1 * var(--bs-gutter-x));
+			@include roww(40px, m);
+			margin-top: calc(-1 * var(--bs-gutter-x) / 2);
 		}
 		@include media-breakpoint-up(xl) {
 			--bs-gutter-x: #{rem(34)};
@@ -129,8 +132,10 @@
 			// margin-left: 0;
 			// margin-right: 0;
 			padding: 0;
+			flex: 0 0 auto;
+    // width: 50%;
 			width: calc(50% - var(--bs-gutter-x));
-			margin-top: var(--bs-gutter-x);
+			margin-top: calc(var(--bs-gutter-x) / 2);
 			@include media-breakpoint-up(sm) {
 				width: auto;
 				margin-top: 0;

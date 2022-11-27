@@ -9,6 +9,8 @@
 .modal-win {
 	// display: block;
 	background-color: #fff;
+	border: 1px solid rgba($color: $primary, $alpha: 0.4);
+
 	max-width: 100%;
 	position: relative;
 	width: rem(1300);
@@ -63,7 +65,7 @@
 		.modal-win__item {
 			padding-bottom: 0.5em;
 			margin-bottom: 0.5em;
-			border-bottom: 1px solid rgba($color: $primary, $alpha: .6);
+			border-bottom: 1px solid rgba($color: $primary, $alpha: 0.6);
 			&:last-child {
 				margin-bottom: 0;
 				border: none;
