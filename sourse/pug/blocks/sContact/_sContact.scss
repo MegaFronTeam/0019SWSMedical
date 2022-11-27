@@ -136,18 +136,14 @@
 		&-widget {
 			height: 100%;
 			width: 100%;
+			transition: filter 0.3s;
 			// @include media-breakpoint-up(md) {
 			// 	width: calc(((100vw - 100%) / 2) + 100%);
 			// }
 			& > * {
 				height: 100%;
 			}
-			.ymaps-2-1-79-ground-pane {
-				//  @include mt;
-				transition: filter 0.3s;
-			}
-			&:not(:hover) .ymaps-2-1-79-ground-pane {
-				// filter: saturate(0);
+			&:not(:hover) {
 				filter: grayscale(1);
 			}
 		}
