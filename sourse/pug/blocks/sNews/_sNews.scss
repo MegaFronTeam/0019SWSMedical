@@ -6,9 +6,10 @@
 	&__row {
 		// --bs-gutter-x: #{rem()};
 		// --bs-gutter-y: #{rem()};
+		align-items: center;
 		--bs-gutter-y: #{rem(10)};
 		@include media-breakpoint-up(lg) {
-			--bs-gutter-x: #{rem(30)};
+			--bs-gutter-x: #{rem(20)};
 		}
 		@include media-breakpoint-up(xxl) {
 			--bs-gutter-x: #{rem(36)};
@@ -51,26 +52,27 @@
 	h6 {
 		font-weight: 700;
 		color: inherit;
-		margin-bottom: rem(5);
+		margin-bottom: 1em;
 
-		@include media-breakpoint-up(md) {
-			margin-top: 23%;
-		}
-		@include media-breakpoint-up(lg) {
-			margin-top: 33%;
-		}
+		// @include media-breakpoint-up(md) {
+		// 	margin-top: 23%;
+		// }
+		// @include media-breakpoint-up(lg) {
+		// 	margin-top: 33%;
+		// }
 	}
 	p {
 		font-weight: 300;
+		margin-bottom: 0.5em;
 		@include media-breakpoint-only(md) {
-			font-size: rem(15);
+			font-size: rem(14);
 		}
 		&:last-child {
 			margin-bottom: 0;
 		}
 	}
 	&__wrapper {
-		max-width: rem(935);
+		max-width: 1155px;
 		margin-left: auto;
 		@include media-breakpoint-up(xxl) {
 			margin-right: rem(35);
@@ -87,6 +89,9 @@
 		}
 		@include media-breakpoint-up(lg) {
 			--img-padding: #{rem(9)};
+			min-width: 560px;
+		}
+		@include media-breakpoint-up(xl) {
 			min-width: 590px;
 		}
 		&::before {
