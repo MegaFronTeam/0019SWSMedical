@@ -14,14 +14,18 @@
 			&:first-child {
 				width: 722px;
 				height: 544px;
-				right: 0;
-				bottom: 0;
+				right: 0 !important;
+				bottom: 0 !important;
+				left: auto !important;
+				top: auto !important;
 			}
 			&:nth-child(2) {
 				width: 826px;
 				height: 642px;
-				right: 0;
-				bottom: 0;
+				right: 0 !important;
+				bottom: 0 !important;
+				left: auto !important;
+				top: auto !important;
 			}
 		}
 	}

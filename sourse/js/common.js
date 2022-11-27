@@ -431,6 +431,12 @@ function eventHandler() {
 		// hoverOnly: true,
 		originY: 0
 	});
+	var footerScene = document.getElementById('footerScene');
+	var parallaxInstance = new Parallax(footerScene, {
+		relativeInput: true,
+		// hoverOnly: true,
+		originY: 0
+	});
 	var StickyTabs = new hcSticky('.sCatalog .tabs__slider', {
 		mobileFirst: true,
 		responsive: {
