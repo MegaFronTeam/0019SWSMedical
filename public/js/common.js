@@ -395,48 +395,25 @@ function eventHandler() {
 		slideToClickedSlide: true,
 		freeMode: true,
 	});
-	var headerBlockScene = document.getElementById('headerBlockScene');
-	var parallaxInstance = new Parallax(headerBlockScene, {
-		relativeInput: true,
-		// hoverOnly: true,
-		originY: 0
+
+	
+	// let paralaxBlocks2 = document.querySelectorAll("#sCatalogScene")
+	// for (const paralaxBlock of paralaxBlocks2) { 
+	// 	var parallaxInstance = new Parallax(paralaxBlock, {
+	// 		relativeInput: true, 
+	// 		// clipRelativeInput: true,
+	// 		originY: 0
+	// 	});
+	// }
+	let paralaxBlocks = document.querySelectorAll(".floating-imgs img")
+	for (const paralaxBlock of paralaxBlocks) { 
+		 
+		new simpleParallax(paralaxBlock, {
+			// delay: .6,
+			// transition: 'cubic-bezier(0,0,0,3)',
+			overflow: true, 
 	});
-	var sCatalogScene = document.getElementById('sCatalogScene');
-	var parallaxInstance = new Parallax(sCatalogScene, {
-		relativeInput: true,
-		// hoverOnly: true,
-		originY: 0
-	});
-	var sServicesScene = document.getElementById('sServicesScene');
-	var parallaxInstance = new Parallax(sServicesScene, {
-		relativeInput: true,
-		// hoverOnly: true,
-		originY: 0
-	});
-	var sNewsScene = document.getElementById('sNewsScene');
-	var parallaxInstance = new Parallax(sNewsScene, {
-		relativeInput: true,
-		// hoverOnly: true,
-		originY: 0
-	});
-	var sFormScene = document.getElementById('sFormScene');
-	var parallaxInstance = new Parallax(sFormScene, {
-		relativeInput: true,
-		// hoverOnly: true,
-		originY: 0
-	});
-	var sContactScene = document.getElementById('sContactScene');
-	var parallaxInstance = new Parallax(sContactScene, {
-		relativeInput: true,
-		// hoverOnly: true,
-		originY: 0
-	});
-	var footerScene = document.getElementById('footerScene');
-	var parallaxInstance = new Parallax(footerScene, {
-		relativeInput: true,
-		// hoverOnly: true,
-		originY: 0
-	});
+	}
 	var StickyTabs = new hcSticky('.sCatalog .tabs__slider', {
 		mobileFirst: true,
 		responsive: {
@@ -451,6 +428,51 @@ function eventHandler() {
 		}
 	});
 	AOS.init();
+
+
+	var lastId,
+		topMenu = $('.menu'),
+		topMenuHeight = topMenu.outerHeight(),
+		// All list items
+		menuItems = topMenu.find("a "),
+		// Anchors corresponding to menu items
+		scrollItems = menuItems.map(function () {
+			var item = $($(this).attr("href"));
+			if (item.length) { return item; }
+		});
+
+	// Bind click handler to menu items
+	// so we can get a fancy scroll animation
+	menuItems.click(function (e) {
+		var href = $(this).attr("href"),
+			offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+		$('html, body').stop().animate({
+			scrollTop: offsetTop
+		}, 300);
+		e.preventDefault();
+	});
+	// Bind to scroll
+	$(window).scroll(function () {
+		// Get container scroll position
+		var fromTop = $(this).scrollTop() + topMenuHeight + 300;
+
+		// Get id of current scroll item
+		var cur = scrollItems.map(function () {
+			if ($(this).offset().top < fromTop)
+				return this;
+		});
+		// Get the id of the current element
+		cur = cur[cur.length - 1];
+		var id = cur && cur.length ? cur[0].id : "";
+
+		if (lastId !== id) {
+			lastId = id;
+			// Set/remove active class
+			menuItems
+				.parent().removeClass("active")
+				.end().filter("[href='#" + id + "']").parent().addClass("active");
+		}
+	});
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
